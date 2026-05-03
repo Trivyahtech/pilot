@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import Breadcrumb from "@/components/Breadcrumb";
+import { API_BASE_URL } from "@/hooks/useCatalog";
 
 export default function Contact() {
   useEffect(() => {
@@ -74,7 +75,7 @@ export default function Contact() {
 
     try {
       // Send POST request to the API
-      const response = await fetch("http://localhost:3000/form", {
+      const response = await fetch(`${API_BASE_URL}/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,77 +4,20 @@ import { Search } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/Breadcrumb";
-import caustic_soda_lye from "../assets/Pilot Impex Product Image/Caustic Soda Lye.png"
-import caustic_soda_flakes from "../assets/Pilot Impex Product Image/Caustic Soda Flakes.png"
-import hydrocloric_acid from "../assets/Pilot Impex Product Image/Hydrochloric Acid.png"
-import dilute_sulphuric_acid from "../assets/Pilot Impex Product Image/Dilute Sulphuric Acid.png"
-import sulphuric_acid from "../assets/Pilot Impex Product Image/Sulphuric Acid.png"
-import phosphoric_acid from "../assets/Pilot Impex Product Image/Phosphoric Acid.png"
-import caustic_potash_flakes from "../assets/Pilot Impex Product Image/Caustic Potash Flakes.png"
-import caustic_potash_lye from "../assets/Pilot Impex Product Image/Caustic Potash Lye.png"
-import caustic_soda_prill from "../assets/Pilot Impex Product Image/Caustic-Soda-Prills.png"
-import hydrogen_paroxide from "../assets/Pilot Impex Product Image/Hydrogen Peroxide.png"
-import alu_cloride from "../assets/Pilot Impex Product Image/Aluminium Chloride.png"
-import benzyle_cloride from "../assets/Pilot Impex Product Image/Benzyl Chloride.png"
-import sodium_clorate from "../assets/Pilot Impex Product Image/Sodium Chlorate.png"
-import methylene_chloride_mdc from "../assets/Pilot Impex Product Image/Methylene Chloride MDC.png"
-import potassium_permanganate from "../assets/Pilot Impex Product Image/Potassium Permanganate.png"
-import hydrazine_hydrate from "../assets/Pilot Impex Product Image/Hydrazine Hydrate.png"
-import stable_bleaching_powder from "../assets/Pilot Impex Product Image/Stable Bleaching Powder.png"
-import chloroform_99 from "../assets/Pilot Impex Product Image/Chloroform.png"
-import sodium_hypochlorite from "../assets/Pilot Impex Product Image/Sodium Hypochlorite.png"
-import poly_aluminium_chloride from "../assets/Pilot Impex Product Image/Poly Aluminium Chloride.png"
-import benzaldehyde_99 from "../assets/Pilot Impex Product Image/Benzaldehyde.png"
-import chlorinated_paraffin from "../assets/Pilot Impex Product Image/Chlorinated Paraffin.png"
-import liquid_chlorine from "../assets/Pilot Impex Product Image/Liquid Chlorine.png"
-import benzyl_alcohol from "../assets/Pilot Impex Product Image/Benzyl Alcohol.png"
-import potassium_carbonate from "../assets/Pilot Impex Product Image/Potassium Carbonate.png"
-
-const allProducts = [
-  // Caustic Soda
-  { name: "Caustic Soda Lye", description: "High concentration liquid caustic soda for industrial cleaning and chemical processing.", slug: "caustic-soda-lye", category: "Caustic Soda", image: caustic_soda_lye },
-  { name: "Caustic Soda Flakes", description: "Pure white caustic soda flakes ideal for soap making and paper production.", slug: "caustic-soda-flakes", category: "Caustic Soda", image: caustic_soda_flakes },
-  
-  // Industrial Acids
-  { name: "Hydrochloric Acid", description: "Technical grade hydrochloric acid for metal cleaning and chemical synthesis.", slug: "hydrochloric-acid", category: "Industrial Acids", image: hydrocloric_acid },
-  { name: "Dilute Sulphuric Acid", description: "Diluted sulphuric acid solution for various industrial applications.", slug: "dilute-sulphuric-acid", category: "Industrial Acids", image: dilute_sulphuric_acid },
-  { name: "Sulphuric Acid", description: "Concentrated sulphuric acid with 98% purity for manufacturing processes.", slug: "sulphuric-acid", category: "Industrial Acids", image: sulphuric_acid },
-  { name: "Phosphoric Acid", description: "Food grade and technical phosphoric acid for fertilizers and beverages.", slug: "phosphoric-acid", category: "Industrial Acids", image: phosphoric_acid },
-  
-  // Caustic Potash
-  { name: "Caustic Potash Flakes", description: "Premium quality potassium hydroxide flakes for fertilizer production.", slug: "caustic-potash-flakes", category: "Caustic Potash", image: caustic_potash_flakes },
-  { name: "Caustic Potash Lye", description: "Liquid potassium hydroxide solution for chemical processing.", slug: "caustic-potash-lye", category: "Caustic Potash", image: caustic_potash_lye },
-  
-  // Hydrogen Peroxide
-  { name: "Caustic Soda Prill", description: "Spherical caustic soda pellets for easy handling and dissolution.", slug: "caustic-soda-prill", category: "Hydrogen Peroxide", image: caustic_soda_prill },
-  { name: "Hydrogen Peroxide", description: "Stabilized hydrogen peroxide for bleaching and disinfection.", slug: "hydrogen-peroxide", category: "Hydrogen Peroxide", image: hydrogen_paroxide },
-  
-  // Chlorination Chemical
-  { name: "Aluminium Chloride", description: "Anhydrous aluminium chloride for water treatment and catalysis.", slug: "aluminium-chloride", category: "Chlorination Chemical", image: alu_cloride },
-  { name: "Benzyl Chloride", description: "High purity benzyl chloride for pharmaceutical intermediates.", slug: "benzyl-chloride", category: "Chlorination Chemical", image: benzyle_cloride },
-  
-  // Other Chemicals
-  { name: "Sodium Chlorate", description: "Technical grade sodium chlorate for paper bleaching and herbicides.", slug: "sodium-chlorate", category: "Other Chemicals", image: sodium_clorate },
-  { name: "Methylene Chloride MDC", description: "Dichloromethane solvent for paint stripping and extraction.", slug: "methylene-chloride-mdc", category: "Other Chemicals", image: methylene_chloride_mdc },
-  { name: "Potassium Permanganate", description: "Crystalline potassium permanganate for water treatment and oxidation.", slug: "potassium-permanganate", category: "Other Chemicals", image: potassium_permanganate },
-  { name: "Hydrazine Hydrate", description: "High purity hydrazine hydrate for pharmaceutical synthesis.", slug: "hydrazine-hydrate", category: "Other Chemicals", image: hydrazine_hydrate },
-  { name: "Stable Bleaching Powder", description: "Calcium hypochlorite powder for water disinfection.", slug: "stable-bleaching-powder", category: "Other Chemicals", image: stable_bleaching_powder },
-  { name: "Chloroform", description: "High purity chloroform for laboratory and industrial applications.", slug: "chloroform", category: "Other Chemicals", image: chloroform_99 },
-  { name: "Sodium Hypochlorite", description: "Liquid sodium hypochlorite solution for sanitization.", slug: "sodium-hypochlorite", category: "Other Chemicals", image: sodium_hypochlorite },
-  { name: "Poly Aluminium Chloride", description: "Coagulant for water and wastewater treatment applications.", slug: "poly-aluminium-chloride", category: "Other Chemicals", image: poly_aluminium_chloride },
-  { name: "Benzaldehyde", description: "High purity benzaldehyde for flavoring, perfumery, and pharmaceutical applications.", slug: "benzaldehyde", category: "Other Chemicals", image: benzaldehyde_99 },
-  { name: "Chlorinated Paraffin", description: "Flame retardant additive for plastics and rubber industries.", slug: "chlorinated-paraffin", category: "Other Chemicals", image: chlorinated_paraffin },
-  { name: "Liquid Chlorine", description: "Compressed liquid chlorine for water treatment and manufacturing.", slug: "liquid-chlorine", category: "Other Chemicals", image: liquid_chlorine },
-  { name: "Benzyl Alcohol", description: "Pharmaceutical grade benzyl alcohol as solvent and preservative.", slug: "benzyl-alcohol", category: "Other Chemicals", image: benzyl_alcohol },
-  { name: "Potassium Carbonate", description: "Anhydrous potassium carbonate for glass and soap production.", slug: "potassium-carbonate", category: "Other Chemicals", image: potassium_carbonate }
-];
-
-const categories = ["All", "Caustic Soda", "Industrial Acids", "Caustic Potash", "Hydrogen Peroxide", "Chlorination Chemical", "Other Chemicals"];
+import { flattenCatalogProducts, type CatalogProduct, useCatalog } from "@/hooks/useCatalog";
 
 export default function Products() {
+  const { data: catalog, isError, isLoading, refetch } = useCatalog();
+  const groups = useMemo(() => catalog?.groups ?? [], [catalog?.groups]);
+  const allProducts = useMemo(() => flattenCatalogProducts(groups), [groups]);
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(allProducts.map((product) => product.category || product.groupName)))],
+    [allProducts]
+  );
 
   useEffect(()=>{
     document.title = "Products | PILOT IMPEX - Chemical Suppliers Since 1992"
@@ -110,14 +53,14 @@ export default function Products() {
     return allProducts
       .filter(product => 
         product.name.toLowerCase().includes(query) || 
-        product.category.toLowerCase().includes(query)
+        (product.category || product.groupName).toLowerCase().includes(query)
       )
       .slice(0, 5); // Show max 5 suggestions
-  }, [searchQuery]);
+  }, [allProducts, searchQuery]);
 
-  const handleSuggestionClick = (suggestion: typeof allProducts[0]) => {
+  const handleSuggestionClick = (suggestion: CatalogProduct) => {
     setSearchQuery(suggestion.name);
-    setSelectedCategory(suggestion.category);
+    setSelectedCategory(suggestion.category || suggestion.groupName);
     setShowSuggestions(false);
     // Optional: Focus the search input after selection
     searchInputRef.current?.focus();
@@ -149,19 +92,19 @@ export default function Products() {
     let products = allProducts;
 
     if (selectedCategory !== "All") {
-      products = products.filter(product => product.category === selectedCategory);
+      products = products.filter(product => (product.category || product.groupName) === selectedCategory);
     }
 
     if (searchQuery.trim()) {
       products = products.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchQuery.toLowerCase())
+        (product.description || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (product.category || product.groupName).toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
     return products;
-  }, [selectedCategory, searchQuery]);
+  }, [allProducts, selectedCategory, searchQuery]);
 
   return (
     <div className="min-h-screen">
@@ -223,7 +166,7 @@ export default function Products() {
                       onMouseEnter={() => setActiveSuggestion(index)}
                     >
                       <div className="font-medium">{suggestion.name}</div>
-                      <div className="text-xs text-muted-foreground">{suggestion.category}</div>
+                      <div className="text-xs text-muted-foreground">{suggestion.category || suggestion.groupName}</div>
                     </div>
                   ))}
                 </div>
@@ -233,67 +176,80 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-8 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className={`rounded-full border-2 transition-colors duration-200 ${
-                  selectedCategory === category 
-                    ? 'border-primary' 
-                    : 'border-border hover:border-primary/60 hover:bg-accent/50'
-                }`}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          {filteredProducts.length > 0 ? (
-            <>
-              <div className="text-center mb-8">
-                <p className="text-muted-foreground">
-                  Showing {filteredProducts.length} products
-                  {selectedCategory !== "All" && ` in ${selectedCategory}`}
-                  {searchQuery && ` matching "${searchQuery}"`}
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProducts.map((product, index) => (
-                  <div key={product.slug} className="stagger-fade" style={{ animationDelay: `${index * 0.05}s` }}>
-                    <ProductCard {...product} />
-                  </div>
+      {isLoading ? (
+        <CatalogLoadingState />
+      ) : isError ? (
+        <CatalogErrorState onRetry={() => refetch()} />
+      ) : (
+        <>
+          <section className="py-8 border-b border-border">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`rounded-full border-2 transition-colors duration-200 ${
+                      selectedCategory === category 
+                        ? 'border-primary' 
+                        : 'border-border hover:border-primary/60 hover:bg-accent/50'
+                    }`}
+                  >
+                    {category}
+                  </Button>
                 ))}
               </div>
-            </>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">
-                No products found matching your criteria.
-              </p>
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setSelectedCategory("All");
-                  setSearchQuery("");
-                }}
-                className="mt-4"
-              >
-                Clear Filters
-              </Button>
             </div>
-          )}
-        </div>
-      </section>
+          </section>
+
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+              {filteredProducts.length > 0 ? (
+                <>
+                  <div className="text-center mb-8">
+                    <p className="text-muted-foreground">
+                      Showing {filteredProducts.length} products
+                      {selectedCategory !== "All" && ` in ${selectedCategory}`}
+                      {searchQuery && ` matching "${searchQuery}"`}
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredProducts.map((product, index) => (
+                      <div key={product.slug} className="stagger-fade" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <ProductCard
+                          name={product.name}
+                          description={product.description || `${product.name} from ${product.groupName}.`}
+                          image={product.image}
+                          slug={product.slug}
+                          category={product.category || product.groupName}
+                          to={product.detailPath}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-muted-foreground text-lg">
+                    No products found matching your criteria.
+                  </p>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedCategory("All");
+                      setSearchQuery("");
+                    }}
+                    className="mt-4"
+                  >
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Can't Find Product Section */}
       <section className="py-16">

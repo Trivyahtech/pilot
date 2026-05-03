@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Search as SearchIcon, Menu, X, ChevronRight, Flame, Droplets, FlaskConical, Atom, TestTube2, Beaker } from "lucide-react";
+import { ChevronDown, Search as SearchIcon, Menu, X, ChevronRight, Flame, Droplets, FlaskConical, Atom, TestTube2, Beaker, Box, Package, Layers, Hexagon, Activity, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import header_icon from "../assets/header-icon.png";
-import { getAllGroups } from "@/data/productGroups";
+import { useCatalog } from "@/hooks/useCatalog";
 
 const groupIcons: Record<string, React.ReactNode> = {
   "caustic-soda": <Droplets className="w-4 h-4 text-blue-500" />,
@@ -15,7 +15,27 @@ const groupIcons: Record<string, React.ReactNode> = {
   "other-chemicals": <Atom className="w-4 h-4 text-yellow-500" />,
 };
 
-const allGroups = getAllGroups();
+const fallbackIcons = [Box, Package, Layers, Hexagon, Activity, Sparkles, Zap, Atom];
+const fallbackColors = [
+  "text-blue-500", "text-orange-500", "text-purple-500", 
+  "text-red-500", "text-green-500", "text-yellow-500", 
+  "text-pink-500", "text-indigo-500", "text-teal-500"
+];
+
+const getDynamicIcon = (slug: string) => {
+  if (groupIcons[slug]) return groupIcons[slug];
+  
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = slug.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  hash = Math.abs(hash);
+  
+  const IconComponent = fallbackIcons[hash % fallbackIcons.length];
+  const colorClass = fallbackColors[hash % fallbackColors.length];
+  
+  return <IconComponent className={`w-4 h-4 ${colorClass}`} />;
+};
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,6 +44,8 @@ export default function Navigation() {
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const { data: catalog, isError, isLoading } = useCatalog();
+  const allGroups = catalog?.groups ?? [];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -144,14 +166,20 @@ export default function Navigation() {
                     onMouseLeave={() => setShowProductDropdown(false)}
                   >
                     <div className="p-4 space-y-1 max-h-[70vh] overflow-y-auto">
-                      {filteredGroups.map((group) => (
+                      {isLoading && (
+                        <div className="text-center py-4 text-muted-foreground text-sm">Loading product groups...</div>
+                      )}
+                      {isError && (
+                        <div className="text-center py-4 text-destructive text-sm">Catalog unavailable</div>
+                      )}
+                      {!isLoading && !isError && filteredGroups.map((group) => (
                         <Link
                           key={group.slug}
                           to={`/products/${group.slug}`}
                           className="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all group"
                           onClick={() => setShowProductDropdown(false)}
                         >
-                          {groupIcons[group.slug] || <Atom className="w-4 h-4 text-muted-foreground" />}
+                          {getDynamicIcon(group.slug)}
                           <div className="flex-1">
                             <span className="font-medium text-foreground group-hover:text-primary transition-colors">{group.name}</span>
                             <span className="ml-2 text-xs text-muted-foreground">({group.products.length})</span>
@@ -159,7 +187,7 @@ export default function Navigation() {
                           <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                       ))}
-                      {filteredGroups.length === 0 && (
+                      {!isLoading && !isError && filteredGroups.length === 0 && (
                         <div className="text-center py-4 text-muted-foreground text-sm">No groups found</div>
                       )}
                     </div>
@@ -237,7 +265,17 @@ export default function Navigation() {
               />
             </div>
             <div className="mt-4 max-h-96 overflow-y-auto space-y-1">
-              {filteredGroups.map((group) => (
+              {isLoading && (
+                <div className="text-center py-4 text-muted-foreground">
+                  Loading product groups...
+                </div>
+              )}
+              {isError && (
+                <div className="text-center py-4 text-destructive">
+                  Catalog unavailable
+                </div>
+              )}
+              {!isLoading && !isError && filteredGroups.map((group) => (
                 <Link
                   key={group.slug}
                   to={`/products/${group.slug}`}
@@ -247,12 +285,12 @@ export default function Navigation() {
                     setIsMenuOpen(false);
                   }}
                 >
-                  {groupIcons[group.slug] || <Atom className="w-4 h-4 text-muted-foreground" />}
+                  {getDynamicIcon(group.slug)}
                   <span className="font-medium text-foreground">{group.name}</span>
                   <span className="text-xs text-muted-foreground">({group.products.length})</span>
                 </Link>
               ))}
-              {filteredGroups.length === 0 && (
+              {!isLoading && !isError && filteredGroups.length === 0 && (
                 <div className="text-center py-4 text-muted-foreground">
                   No product groups found
                 </div>

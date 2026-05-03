@@ -3,13 +3,15 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Package } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import ProductSection from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
-import { getGroupBySlug } from "@/data/productGroups";
+import { useCatalog } from "@/hooks/useCatalog";
 
 export default function ProductGroupDetail() {
   const { groupSlug } = useParams<{ groupSlug: string }>();
-  const group = groupSlug ? getGroupBySlug(groupSlug) : undefined;
+  const { data: catalog, isError, isLoading, refetch } = useCatalog();
+  const group = groupSlug ? catalog?.groups.find((item) => item.slug === groupSlug) : undefined;
 
   useEffect(() => {
     if (group) {
@@ -19,6 +21,30 @@ export default function ProductGroupDetail() {
     }
     window.scrollTo(0, 0);
   }, [group]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <div className="pt-24">
+          <CatalogLoadingState />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <div className="pt-24">
+          <CatalogErrorState onRetry={() => refetch()} />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!group) {
     return (

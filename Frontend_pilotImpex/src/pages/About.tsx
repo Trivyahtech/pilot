@@ -8,7 +8,7 @@ import { motion, useAnimation } from "framer-motion";
 
 // Animated number component
 const AnimatedNumber = ({ value, label }: { value: string | number; label?: string }) => {
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState<string | number>(0);
   const controls = useAnimation();
   const isNumeric = !isNaN(Number(value));
   const target = isNumeric ? Number(value) : 0;
@@ -43,9 +43,9 @@ const AnimatedNumber = ({ value, label }: { value: string | number; label?: stri
       const timer = setTimeout(animate, 300); // Slight delay for better effect
       return () => clearTimeout(timer);
     } else {
-      setDisplayValue(value as any);
+      setDisplayValue(value);
     }
-  }, [value, controls, isNumeric, isYear]);
+  }, [value, controls, isNumeric, isYear, target]);
 
   return (
     <motion.span animate={controls}>

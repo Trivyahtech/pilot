@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { FileDown, MessageCircle } from "lucide-react";
 import SpecificationTable from "@/components/SpecificationTable";
 import type { Product } from "@/data/productGroups";
 
@@ -21,6 +21,7 @@ export default function ProductSection({ product, groupSlug }: ProductSectionPro
   // Defaults for optional props
   const inStock = product.inStock ?? true;
   const category = product.category ?? "Industrial Chemical";
+  const documents = product.documents ?? [];
 
   // Derive physical form from specs or name
   const physicalForm = (() => {
@@ -109,27 +110,21 @@ export default function ProductSection({ product, groupSlug }: ProductSectionPro
 
         {/* ═══ 4. CTA BUTTONS ═══ */}
         <div className="border-t border-slate-200 px-3.5 py-3 space-y-2 mt-auto">
-          {/* Row 1 — Leaflet + MSDS (ghost) */}
-          {(product.hasLeaflet || product.hasMSDS) && (
-            <div className="flex gap-1.5">
-              {product.hasLeaflet && (
-                <button
-                  onClick={handleEnquiry}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 text-xs text-slate-600 bg-transparent border border-slate-200 rounded-lg hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer"
+          {documents.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              {documents.map((document) => (
+                <a
+                  key={document.id}
+                  href={document.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="min-w-0 inline-flex items-center justify-center gap-1.5 py-2 px-2 text-xs text-slate-600 bg-transparent border border-slate-200 rounded-lg hover:border-blue-300 hover:text-blue-600 transition-colors"
+                  title={document.name || document.originalName}
                 >
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12l4 3 4-3M8 1v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Leaflet PDF
-                </button>
-              )}
-              {product.hasMSDS && (
-                <button
-                  onClick={handleEnquiry}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 text-xs text-slate-600 bg-transparent border border-slate-200 rounded-lg hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer"
-                >
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12l4 3 4-3M8 1v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  MSDS Sheet
-                </button>
-              )}
+                  <FileDown className="w-3 h-3 flex-shrink-0" />
+                  <span className="truncate">{document.name || document.originalName}</span>
+                </a>
+              ))}
             </div>
           )}
 

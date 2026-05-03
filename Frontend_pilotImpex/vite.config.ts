@@ -8,6 +8,32 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ["vanilla-antacid-overfed.ngrok-free.dev"],
+    watch: {
+      usePolling: true,
+    },
+    proxy: {
+      "/admin": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+      "/catalog": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+      "/data": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+      "/form": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+      "/uploads": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [
     react(),

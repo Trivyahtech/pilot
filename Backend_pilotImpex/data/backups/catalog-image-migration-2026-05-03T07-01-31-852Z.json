@@ -1,0 +1,1042 @@
+{
+  "groups": [
+    {
+      "name": "Caustic Soda Group",
+      "slug": "caustic-soda",
+      "description": "High-quality sodium hydroxide products for industrial cleaning, textile, and chemical processing.",
+      "order": 1,
+      "products": [
+        {
+          "name": "Caustic Soda Lye (NaOH)",
+          "slug": "caustic-soda-lye",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Type",
+              "specification": "Textile Dyes"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Purity",
+              "specification": "% 98.00 min"
+            }
+          ],
+          "caution": "Causes severe skin burns and eye damage; Corrosive",
+          "applications": [
+            "Textile Dyes",
+            "Paper & Pulp Industry",
+            "Soap Manufacturing",
+            "Water Treatment",
+            "Chemical Processing",
+            "Aluminium Processing"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        },
+        {
+          "name": "Caustic Soda Flakes (NaOH)",
+          "slug": "caustic-soda-flakes",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "1310-73-2"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical State",
+              "specification": "Powder / Flakes"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Purity",
+              "specification": "% 99.00 min"
+            }
+          ],
+          "caution": "Causes severe skin burns and eye damage; Corrosive",
+          "applications": [
+            "Soap Making",
+            "Paper Production",
+            "Textile Industry",
+            "Water Treatment",
+            "Chemical Manufacturing",
+            "Petroleum Refining"
+          ],
+          "documents": [],
+          "order": 2,
+          "inStock": true
+        },
+        {
+          "name": "Caustic Soda Prills (NaOH)",
+          "slug": "caustic-soda-prills",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Form",
+              "specification": "Granule / Prills"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Purity",
+              "specification": "% 99.00 min"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Causes severe skin burns and eye damage; Corrosive",
+          "applications": [
+            "Chemical Manufacturing",
+            "Water Treatment",
+            "Textile Processing",
+            "Soap & Detergent Industry",
+            "Petroleum Refining"
+          ],
+          "documents": [],
+          "order": 3,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "name": "Industrial Acids Group",
+      "slug": "industrial-acids",
+      "description": "Technical and food-grade acids for manufacturing, metal processing, and laboratory applications.",
+      "order": 2,
+      "products": [
+        {
+          "name": "Hydrochloric Acid (HCl)",
+          "slug": "hydrochloric-acid",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Usage",
+              "specification": "Industrial"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            }
+          ],
+          "caution": "Causes severe skin burns; Toxic by inhalation",
+          "applications": [
+            "Metal Cleaning",
+            "Chemical Synthesis",
+            "pH Control",
+            "Oil Well Acidizing",
+            "Food Processing",
+            "Water Treatment"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        },
+        {
+          "name": "Dilute Sulphuric Acid (H₂SO₄)",
+          "slug": "dilute-sulphuric-acid",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Molecular Formula",
+              "specification": "H₂SO₄"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Usage",
+              "specification": "Laboratory / Industrial"
+            }
+          ],
+          "caution": "Causes severe skin burns; Corrosive to metals",
+          "applications": [
+            "Textile Industry",
+            "Dyes Industry",
+            "Alum Manufacturing",
+            "Laboratory Use",
+            "Battery Manufacturing"
+          ],
+          "documents": [],
+          "order": 2,
+          "inStock": true
+        },
+        {
+          "name": "Sulphuric Acid (H₂SO₄) 98%",
+          "slug": "sulphuric-acid",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Purity",
+              "specification": "% 98.00 min"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            }
+          ],
+          "caution": "Causes severe skin burns; Corrosive",
+          "applications": [
+            "Fertilizer Manufacturing",
+            "Chemical Processing",
+            "Petroleum Refining",
+            "Metal Processing",
+            "Battery Manufacturing"
+          ],
+          "documents": [],
+          "order": 3,
+          "inStock": true
+        },
+        {
+          "name": "Phosphoric Acid (H₃PO₄)",
+          "slug": "phosphoric-acid",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Grade",
+              "specification": "Industrial / Food Grade"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Application",
+              "specification": "Industrial"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            }
+          ],
+          "caution": "Causes skin irritation; Corrosive",
+          "applications": [
+            "Fertilizer Production",
+            "Food & Beverage Industry",
+            "Metal Treatment",
+            "Detergent Manufacturing",
+            "Water Treatment"
+          ],
+          "documents": [],
+          "order": 4,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "name": "Caustic Potash Group",
+      "slug": "caustic-potash",
+      "description": "Premium potassium-based chemicals for pharmaceutical, fertilizer, and chemical manufacturing.",
+      "order": 3,
+      "products": [
+        {
+          "name": "CAUSTIC POTASH LYE (KOH)",
+          "slug": "caustic-potash-lye",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Potassium Hydroxide (as KOH)",
+              "specification": "% 47.00 min"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Potassium Carbonate (as K₂CO₃)",
+              "specification": "% 00.50 max"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Chloride (as KCl)",
+              "specification": "% 150.00 max"
+            },
+            {
+              "srNo": 4,
+              "characteristic": "Iron (as Fe+++)",
+              "specification": "ppm 20.00 max"
+            }
+          ],
+          "caution": "Harmful to Animals & Plant Tissues; Corrosive",
+          "applications": [
+            "Potassium Carbonate",
+            "Dye Stuff industry",
+            "Rubber Chemicals",
+            "Potassium Permanganate",
+            "Acid Neutralization",
+            "Other Potassium based chemicals",
+            "Pharmaceutical industry"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        },
+        {
+          "name": "CAUSTIC POTASH FLAKES (KOH)",
+          "slug": "caustic-potash-flakes",
+          "image": "/uploads/1777773348815-86105c6ad218344f-label.png",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Potassium Hydroxide (as KOH) Gr I",
+              "specification": "% 90.00 min"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Potassium Hydroxide (as KOH) Gr II",
+              "specification": "% 87.00 min"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Potassium Carbonate (as K₂CO₃)",
+              "specification": "% 1.00 max"
+            },
+            {
+              "srNo": 4,
+              "characteristic": "Chloride (as KCl)",
+              "specification": "ppm 300.00 max"
+            },
+            {
+              "srNo": 5,
+              "characteristic": "Iron (as Fe+++)",
+              "specification": "ppm 20.00 max"
+            }
+          ],
+          "caution": "Harmful to Animals & Plant Tissues; Corrosive",
+          "applications": [
+            "Potassium Carbonate manufacturing",
+            "Dye Stuff industry",
+            "Rubber Chemicals",
+            "Potassium Permanganate manufacture",
+            "Acid Neutralization",
+            "Other Potassium based chemicals",
+            "Pharmaceutical industry",
+            "Petroleum Refining",
+            "Fertilizer Ind",
+            "Cosmetic Ind"
+          ],
+          "documents": [
+            {
+              "id": "99cd39c9-fabc-43f5-9b9a-e47df432c985",
+              "name": "Master annexure",
+              "url": "/uploads/1777773408641-5b75f016a6b99a37-corekit-master-document-annexure.pdf",
+              "originalName": "Corekit Master Document annexure.pdf",
+              "mimeType": "application/pdf",
+              "size": 57794,
+              "uploadedAt": "2026-05-03T01:56:48.642Z"
+            }
+          ],
+          "order": 2,
+          "inStock": true
+        },
+        {
+          "name": "POTASSIUM CARBONATE (K₂CO₃) - Powder & Granules",
+          "slug": "potassium-carbonate",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Total Alkalinity (as K₂CO₃) on dry basis",
+              "specification": "% 99.00 min"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Free Alkali as KOH",
+              "specification": "% 00.20 max"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Bi Carbonate (as KHCO₃)",
+              "specification": "% 00.40 max"
+            },
+            {
+              "srNo": 4,
+              "characteristic": "Chloride (as KCl)",
+              "specification": "ppm 150.00 max"
+            },
+            {
+              "srNo": 5,
+              "characteristic": "Iron (as Fe+++)",
+              "specification": "ppm 10.00 max"
+            }
+          ],
+          "caution": "Decomposes when heated, emitting toxic fumes",
+          "applications": [
+            "GLS lamps and Ophthalmic glasses",
+            "Fertilizer industry",
+            "Rubber Chemicals",
+            "Pesticide Industry",
+            "Dyes industries and other Potassium based chemicals",
+            "Pharmaceutical Industry",
+            "Agricultural Ind.",
+            "Glass Industries"
+          ],
+          "documents": [],
+          "order": 3,
+          "inStock": true
+        },
+        {
+          "name": "TEST",
+          "slug": "test",
+          "image": "/uploads/1777773584089-bd21e475d60c6b64-chatgpt-image-apr-25-2026-06-47-05-pm.png",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "ABC",
+              "specification": "76"
+            }
+          ],
+          "caution": "NOPE",
+          "applications": [
+            "QQ"
+          ],
+          "documents": [],
+          "order": 4,
+          "price": "3444",
+          "unit": "NOS",
+          "moq": "2",
+          "description": "COREKIT",
+          "category": "LP",
+          "inStock": true,
+          "purity": "88",
+          "purityValue": 22
+        }
+      ]
+    },
+    {
+      "name": "Hydrogen Peroxide Group",
+      "slug": "hydrogen-peroxide",
+      "description": "Stabilized hydrogen peroxide and related products for bleaching, disinfection, and oxidation.",
+      "order": 4,
+      "products": [
+        {
+          "name": "Hydrogen Peroxide (H₂O₂)",
+          "slug": "hydrogen-peroxide",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "7722-84-1"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Oxidizing; Causes serious eye damage",
+          "applications": [
+            "Paper Industry",
+            "Textile Industry",
+            "Sugar Industry",
+            "Coir & Tobacco Industries",
+            "Oxidizing agent for silver ornaments",
+            "Antiseptic agent in Pharmaceuticals"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "name": "Chlorination Chemicals Group",
+      "slug": "chlorination-chemicals",
+      "description": "Chlorine-based chemicals for water treatment, synthesis, and industrial manufacturing.",
+      "order": 5,
+      "products": [
+        {
+          "name": "Aluminium Chloride (AlCl₃)",
+          "slug": "aluminium-chloride",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Form",
+              "specification": "Powder"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Storage",
+              "specification": "Room Temperature"
+            }
+          ],
+          "caution": "Corrosive; Reacts violently with water",
+          "applications": [
+            "Water Treatment",
+            "Catalysis",
+            "Chemical Synthesis",
+            "Petroleum Refining"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        },
+        {
+          "name": "Benzyl Chloride (C₆H₅CH₂Cl)",
+          "slug": "benzyl-chloride",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Purity",
+              "specification": "% 99.00 min"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Harmful if inhaled; Irritating to eyes and skin",
+          "applications": [
+            "Pharmaceutical Intermediates",
+            "Dye Manufacturing",
+            "Flavor & Fragrance",
+            "Chemical Synthesis"
+          ],
+          "documents": [],
+          "order": 2,
+          "inStock": true
+        },
+        {
+          "name": "Liquid Chlorine (Cl₂)",
+          "slug": "liquid-chlorine",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "7782-50-5"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Storage",
+              "specification": "Room Temperature"
+            }
+          ],
+          "caution": "Toxic by inhalation; Causes severe burns",
+          "applications": [
+            "Synthetic Rubber",
+            "Chlorinated Hydrocarbons",
+            "Sanitizing Agent",
+            "Water Purification"
+          ],
+          "documents": [],
+          "order": 3,
+          "inStock": true
+        },
+        {
+          "name": "Poly Aluminium Chloride (PAC)",
+          "slug": "poly-aluminium-chloride",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Form",
+              "specification": "Powder"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Application",
+              "specification": "Water Treatment"
+            }
+          ],
+          "caution": "May cause skin and eye irritation",
+          "applications": [
+            "Water Treatment",
+            "Wastewater Treatment",
+            "Paper Manufacturing",
+            "Textile Industry"
+          ],
+          "documents": [],
+          "order": 4,
+          "inStock": true
+        },
+        {
+          "name": "Stable Bleaching Powder (Ca(OCl)₂)",
+          "slug": "stable-bleaching-powder",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Form",
+              "specification": "Powder"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Type",
+              "specification": "Bleaching Powder"
+            }
+          ],
+          "caution": "Oxidizing; Irritating to skin and eyes",
+          "applications": [
+            "Water Disinfection",
+            "Textile Bleaching",
+            "Paper Industry",
+            "Sanitation"
+          ],
+          "documents": [],
+          "order": 5,
+          "inStock": true
+        },
+        {
+          "name": "Sodium Hypochlorite (NaOCl)",
+          "slug": "sodium-hypochlorite",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Purity",
+              "specification": "% 99.00 min"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Causes skin burns; Toxic to aquatic life",
+          "applications": [
+            "Sanitization",
+            "Water Treatment",
+            "Textile Bleaching",
+            "Disinfection"
+          ],
+          "documents": [],
+          "order": 6,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "name": "Other Chemicals Group",
+      "slug": "other-chemicals",
+      "description": "Specialty chemicals, solvents, and intermediates for diverse industrial applications.",
+      "order": 6,
+      "products": [
+        {
+          "name": "Sodium Chlorate (NaClO₃)",
+          "slug": "sodium-chlorate",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Structural Formula",
+              "specification": "NaClO₃"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Color",
+              "specification": "White"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Application",
+              "specification": "Pharmaceutical, Acetylene Gas"
+            }
+          ],
+          "caution": "Oxidizing; May intensify fire",
+          "applications": [
+            "Pharmaceutical",
+            "Acetylene Gas",
+            "Paper Bleaching",
+            "Herbicides"
+          ],
+          "documents": [],
+          "order": 1,
+          "inStock": true
+        },
+        {
+          "name": "test``",
+          "slug": "teste",
+          "image": "/uploads/1777774188197-335865998f86d5cc-images.png",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "abc",
+              "specification": "33"
+            }
+          ],
+          "caution": "bass",
+          "applications": [
+            "bd",
+            "wd",
+            "we",
+            "rfer"
+          ],
+          "documents": [
+            {
+              "id": "cc6d982a-460f-4b27-bda3-82512f415d6f",
+              "name": "corekit",
+              "url": "/uploads/1777789923274-16a4d437e33632c1-corekit-master-document-annexure.pdf",
+              "originalName": "Corekit Master Document annexure.pdf",
+              "mimeType": "application/pdf",
+              "size": 57794,
+              "uploadedAt": "2026-05-03T06:32:03.277Z"
+            }
+          ],
+          "order": 1,
+          "unit": "44",
+          "moq": "5",
+          "description": "none",
+          "category": "bca",
+          "inStock": true,
+          "purity": "44",
+          "purityValue": 66
+        },
+        {
+          "name": "Methylene Chloride MDC (CH₂Cl₂)",
+          "slug": "methylene-chloride-mdc",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Chemical Name",
+              "specification": "Methylene Chloride"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical State",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Purity",
+              "specification": "% >99.00"
+            }
+          ],
+          "caution": "Harmful if inhaled; Suspected carcinogen",
+          "applications": [
+            "Paint Stripping",
+            "Extraction Solvent",
+            "Pharmaceutical Manufacturing",
+            "Degreasing"
+          ],
+          "documents": [],
+          "order": 2,
+          "inStock": true
+        },
+        {
+          "name": "Potassium Permanganate (KMnO₄)",
+          "slug": "potassium-permanganate",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Grade",
+              "specification": "Technical Grade"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical Form",
+              "specification": "Crystal / Powder"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Storage",
+              "specification": "Room Temperature"
+            }
+          ],
+          "caution": "Oxidizing; Causes burns",
+          "applications": [
+            "Water Treatment",
+            "Chemical Synthesis",
+            "Medical Applications",
+            "Metal Finishing"
+          ],
+          "documents": [],
+          "order": 3,
+          "inStock": true
+        },
+        {
+          "name": "Hydrazine Hydrate (N₂H₄·H₂O)",
+          "slug": "hydrazine-hydrate",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "110-82-7"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Toxic; Suspected carcinogen; Harmful to aquatic environment",
+          "applications": [
+            "Reducing Agent",
+            "Oxygen Scavenger (Boiler Water)",
+            "Anti-tubercular Drug (Hydralazine)",
+            "Agricultural Chemicals",
+            "Pharmaceutical Industry"
+          ],
+          "documents": [],
+          "order": 4,
+          "inStock": true
+        },
+        {
+          "name": "Chloroform (CHCl₃)",
+          "slug": "chloroform",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "67-66-3"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Purity",
+              "specification": "% 99.90 min"
+            }
+          ],
+          "caution": "Harmful if inhaled or swallowed; Irritating to skin",
+          "applications": [
+            "Fire Fighting Agent",
+            "Soil Fumigants",
+            "Pharmaceutical Preparations",
+            "Chemical Solvent"
+          ],
+          "documents": [],
+          "order": 5,
+          "inStock": true
+        },
+        {
+          "name": "Benzaldehyde (C₆H₅CHO) 99.5%",
+          "slug": "benzaldehyde",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Type",
+              "specification": "Benzaldehyde"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Purity",
+              "specification": "% 99.50 min"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Grade",
+              "specification": "Industrial Grade"
+            }
+          ],
+          "caution": "Harmful if swallowed; Irritating to skin and eyes",
+          "applications": [
+            "Flavor & Fragrance",
+            "Pharmaceutical Industry",
+            "Dye Manufacturing",
+            "Chemical Synthesis"
+          ],
+          "documents": [],
+          "order": 6,
+          "inStock": true
+        },
+        {
+          "name": "Chlorinated Paraffin",
+          "slug": "chlorinated-paraffin",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "CAS No",
+              "specification": "63449-39-8"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Physical Form",
+              "specification": "Liquid"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Storage",
+              "specification": "Room Temperature"
+            }
+          ],
+          "caution": "Harmful to aquatic organisms",
+          "applications": [
+            "Flame Retardant",
+            "Secondary Plasticizer",
+            "Rubber Industry",
+            "Paints & Adhesives",
+            "Sealants & Plastics"
+          ],
+          "documents": [],
+          "order": 7,
+          "inStock": true
+        },
+        {
+          "name": "Benzyl Alcohol (C₆H₅CH₂OH)",
+          "slug": "benzyl-alcohol",
+          "image": "",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Grade",
+              "specification": "Pharmaceutical Grade"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Type",
+              "specification": "Benzyl Alcohol"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Form",
+              "specification": "Liquid"
+            }
+          ],
+          "caution": "Harmful if swallowed in large quantities",
+          "applications": [
+            "Solvent",
+            "Preservative",
+            "Pharmaceutical Industry",
+            "Personal Care Products",
+            "Chemical Intermediate"
+          ],
+          "documents": [],
+          "order": 8,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "name": "Test",
+      "slug": "test",
+      "description": "none",
+      "order": 7,
+      "products": [
+        {
+          "name": "BASIC PACKAGE",
+          "slug": "basic-package",
+          "image": "/uploads/1777790831332-c85e165f325cd228-images.png",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "Auth & user management",
+              "specification": "Included"
+            },
+            {
+              "srNo": 2,
+              "characteristic": "Product catalog",
+              "specification": "Included"
+            },
+            {
+              "srNo": 3,
+              "characteristic": "Product variants",
+              "specification": "Not included"
+            },
+            {
+              "srNo": 4,
+              "characteristic": "Inventory management",
+              "specification": "Included"
+            },
+            {
+              "srNo": 5,
+              "characteristic": "Cart engine",
+              "specification": "Included"
+            },
+            {
+              "srNo": 6,
+              "characteristic": "Address management",
+              "specification": "Included"
+            }
+          ],
+          "caution": "Only single vendor can Operate",
+          "applications": [
+            "ADMIN, ANALYTICS & SCALE",
+            "MARKETING & ENGAGEMENT",
+            "CHECKOUT, PAYMENT & ORDERS",
+            "FOUNDATION & CATALOGUE"
+          ],
+          "documents": [],
+          "order": 1,
+          "price": "30,000/-",
+          "unit": "per Package",
+          "moq": "1",
+          "description": "Get online fast with the essentials.\nBest for new stores launching a single catalogue.\nFeatures included\n13 / 21\nLearn more ->",
+          "category": "CORE KIT",
+          "inStock": true,
+          "purity": "100%",
+          "purityValue": 99
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-05-03T06:47:11.333Z"
+}

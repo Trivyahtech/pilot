@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import ProductGroupCard from "@/components/ProductGroupCard";
 import { Button } from "@/components/ui/button";
-import { getAllGroups, getProductCount } from "@/data/productGroups";
+import { useCatalog } from "@/hooks/useCatalog";
 
 export default function ProductGroups() {
+  const { data: catalog, isError, isLoading, refetch } = useCatalog();
+
   useEffect(() => {
     document.title = "Products | PILOT IMPEX - Chemical Suppliers Since 1992";
     window.scrollTo(0, 0);
   }, []);
 
-  const groups = getAllGroups();
-  const totalProducts = getProductCount();
+  const groups = catalog?.groups ?? [];
+  const totalProducts = groups.reduce((sum, group) => sum + group.products.length, 0);
 
   return (
     <div className="min-h-screen">
@@ -31,22 +34,27 @@ export default function ProductGroups() {
         </div>
       </section>
 
-      {/* Product Groups Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {groups.map((group, index) => (
-              <div
-                key={group.slug}
-                className="stagger-fade"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <ProductGroupCard group={group} />
-              </div>
-            ))}
+      {isLoading ? (
+        <CatalogLoadingState />
+      ) : isError ? (
+        <CatalogErrorState onRetry={() => refetch()} />
+      ) : (
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {groups.map((group, index) => (
+                <div
+                  key={group.slug}
+                  className="stagger-fade"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <ProductGroupCard group={group} />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Can't Find Product CTA */}
       <section className="py-16">

@@ -9,11 +9,12 @@ interface ProductCardProps {
   image?: string;
   slug: string;
   category?: string;
+  to?: string;
 }
 
-export default function ProductCard({ name, description, image, slug, category }: ProductCardProps) {
+export default function ProductCard({ name, description, image, slug, category, to }: ProductCardProps) {
   return (
-    <Link to={`/products/${slug}`} className="block h-full">
+    <Link to={to || `/products/${slug}`} className="block h-full">
       <Card className="group relative overflow-hidden h-full bg-gradient-to-br from-card to-card/80 hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 z-0" />

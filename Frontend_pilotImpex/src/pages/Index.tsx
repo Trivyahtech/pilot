@@ -5,12 +5,10 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProductGroupCard from "@/components/ProductGroupCard";
 import Footer from "@/components/Footer";
+import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getFeaturedGroups, getProductCount } from "@/data/productGroups";
-
-const featuredGroups = getFeaturedGroups();
-const totalProducts = getProductCount();
+import { useCatalog } from "@/hooks/useCatalog";
 
 const features = [
   {
@@ -36,6 +34,11 @@ const features = [
 ];
 
 const Index = () => {
+  const { data: catalog, isError, isLoading, refetch } = useCatalog();
+  const groups = catalog?.groups ?? [];
+  const featuredGroups = groups.slice(0, 4);
+  const totalProducts = groups.reduce((sum, group) => sum + group.products.length, 0);
+
   useEffect(() => {
     // Check if we need to scroll to hero section
     const shouldScroll = sessionStorage.getItem('shouldScrollToHero');
@@ -91,48 +94,54 @@ const Index = () => {
           <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-16 max-w-4xl mx-auto">
-            <span className="section-badge">
-              Our Product Range
-            </span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              Industry-Leading <span className="text-primary">Chemical Solutions</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Explore our {featuredGroups.length} product groups with {totalProducts}+ industrial chemicals, engineered for excellence.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {featuredGroups.map((group, index) => (
-              <div 
-                key={group.slug} 
-                className="stagger-fade" 
-                style={{ animationDelay: `${index * 0.1}s` }}
+        {isLoading ? (
+          <CatalogLoadingState />
+        ) : isError ? (
+          <CatalogErrorState onRetry={() => refetch()} />
+        ) : (
+          <div className="container mx-auto px-4 relative">
+            <div className="text-center mb-16 max-w-4xl mx-auto">
+              <span className="section-badge">
+                Our Product Range
+              </span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+                Industry-Leading <span className="text-primary">Chemical Solutions</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Explore our {featuredGroups.length} product groups with {totalProducts}+ industrial chemicals, engineered for excellence.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {featuredGroups.map((group, index) => (
+                <div 
+                  key={group.slug} 
+                  className="stagger-fade" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <ProductGroupCard group={group} />
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="px-8 py-4 group relative overflow-hidden transition-all duration-300 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 hover:text-foreground"
+                asChild
               >
-                <ProductGroupCard group={group} />
-              </div>
-            ))}
+                <Link to="/products" className="relative z-10 flex items-center justify-center gap-2">
+                  <span className="relative inline-flex flex-col items-center">
+                    <span>Explore All Products</span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/60 group-hover:w-full transition-all duration-300"></span>
+                  </span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
-          
-          <div className="text-center">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 group relative overflow-hidden transition-all duration-300 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 hover:text-foreground"
-              asChild
-            >
-              <Link to="/products" className="relative z-10 flex items-center justify-center gap-2">
-                <span className="relative inline-flex flex-col items-center">
-                  <span>Explore All Products</span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/60 group-hover:w-full transition-all duration-300"></span>
-                </span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+        )}
       </section>
 
       {/* Contact Form Section */}
