@@ -1,0 +1,475 @@
+// ============================================================
+// PILOT IMPEX — Product Groups Data (Single Source of Truth)
+// ============================================================
+
+// --- Types ---
+export interface ProductSpecification {
+  srNo: number;
+  characteristic: string;
+  specification: string;
+}
+
+export interface Product {
+  name: string;
+  slug: string;
+  image?: string;
+  specifications: ProductSpecification[];
+  caution?: string;
+  applications: string[];
+  hasLeaflet?: boolean;
+  hasMSDS?: boolean;
+  // New optional fields for enhanced card
+  price?: string;           // e.g. "₹12/L"
+  unit?: string;            // e.g. "per Litre"
+  moq?: string;             // e.g. "200L"
+  description?: string;     // 1-2 line product description
+  category?: string;        // e.g. "Industrial Chemical"
+  inStock?: boolean;        // stock availability
+  rating?: number;          // 0-5 star rating
+  purity?: string;          // e.g. "32-35%"
+  purityValue?: number;     // 0-100 for progress bar width
+}
+
+export interface ProductGroup {
+  name: string;
+  slug: string;
+  description: string;
+  products: Product[];
+}
+
+// --- Image Imports ---
+import caustic_soda_lye from "@/assets/Pilot Impex Product Image/Caustic Soda Lye.png";
+import caustic_soda_flakes from "@/assets/Pilot Impex Product Image/Caustic Soda Flakes.png";
+import caustic_soda_prill from "@/assets/Pilot Impex Product Image/Caustic-Soda-Prills.png";
+import hydrochloric_acid from "@/assets/Pilot Impex Product Image/Hydrochloric Acid.png";
+import dilute_sulphuric_acid from "@/assets/Pilot Impex Product Image/Dilute Sulphuric Acid.png";
+import sulphuric_acid from "@/assets/Pilot Impex Product Image/Sulphuric Acid.png";
+import phosphoric_acid from "@/assets/Pilot Impex Product Image/Phosphoric Acid.png";
+import caustic_potash_flakes from "@/assets/Pilot Impex Product Image/Caustic Potash Flakes.png";
+import caustic_potash_lye from "@/assets/Pilot Impex Product Image/Caustic Potash Lye.png";
+import hydrogen_peroxide from "@/assets/Pilot Impex Product Image/Hydrogen Peroxide.png";
+import aluminium_chloride from "@/assets/Pilot Impex Product Image/Aluminium Chloride.png";
+import benzyl_chloride from "@/assets/Pilot Impex Product Image/Benzyl Chloride.png";
+import sodium_chlorate from "@/assets/Pilot Impex Product Image/Sodium Chlorate.png";
+import methylene_chloride from "@/assets/Pilot Impex Product Image/Methylene Chloride MDC.png";
+import potassium_permanganate from "@/assets/Pilot Impex Product Image/Potassium Permanganate.png";
+import hydrazine_hydrate from "@/assets/Pilot Impex Product Image/Hydrazine Hydrate.png";
+import stable_bleaching_powder from "@/assets/Pilot Impex Product Image/Stable Bleaching Powder.png";
+import chloroform from "@/assets/Pilot Impex Product Image/Chloroform.png";
+import sodium_hypochlorite from "@/assets/Pilot Impex Product Image/Sodium Hypochlorite.png";
+import poly_aluminium_chloride from "@/assets/Pilot Impex Product Image/Poly Aluminium Chloride.png";
+import benzaldehyde from "@/assets/Pilot Impex Product Image/Benzaldehyde.png";
+import chlorinated_paraffin from "@/assets/Pilot Impex Product Image/Chlorinated Paraffin.png";
+import liquid_chlorine from "@/assets/Pilot Impex Product Image/Liquid Chlorine.png";
+import benzyl_alcohol from "@/assets/Pilot Impex Product Image/Benzyl Alcohol.png";
+import potassium_carbonate from "@/assets/Pilot Impex Product Image/Potassium Carbonate.png";
+
+// --- Product Groups ---
+export const productGroups: ProductGroup[] = [
+  // ── Caustic Soda Group ──
+  {
+    name: "Caustic Soda Group",
+    slug: "caustic-soda",
+    description: "High-quality sodium hydroxide products for industrial cleaning, textile, and chemical processing.",
+    products: [
+      {
+        name: "Caustic Soda Lye (NaOH)",
+        slug: "caustic-soda-lye",
+        image: caustic_soda_lye,
+        specifications: [
+          { srNo: 1, characteristic: "Type", specification: "Textile Dyes" },
+          { srNo: 2, characteristic: "Physical State", specification: "Liquid" },
+          { srNo: 3, characteristic: "Purity", specification: "% 98.00 min" },
+        ],
+        caution: "Causes severe skin burns and eye damage; Corrosive",
+        applications: ["Textile Dyes", "Paper & Pulp Industry", "Soap Manufacturing", "Water Treatment", "Chemical Processing", "Aluminium Processing"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Caustic Soda Flakes (NaOH)",
+        slug: "caustic-soda-flakes",
+        image: caustic_soda_flakes,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "1310-73-2" },
+          { srNo: 2, characteristic: "Physical State", specification: "Powder / Flakes" },
+          { srNo: 3, characteristic: "Purity", specification: "% 99.00 min" },
+        ],
+        caution: "Causes severe skin burns and eye damage; Corrosive",
+        applications: ["Soap Making", "Paper Production", "Textile Industry", "Water Treatment", "Chemical Manufacturing", "Petroleum Refining"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Caustic Soda Prills (NaOH)",
+        slug: "caustic-soda-prills",
+        image: caustic_soda_prill,
+        specifications: [
+          { srNo: 1, characteristic: "Form", specification: "Granule / Prills" },
+          { srNo: 2, characteristic: "Purity", specification: "% 99.00 min" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Causes severe skin burns and eye damage; Corrosive",
+        applications: ["Chemical Manufacturing", "Water Treatment", "Textile Processing", "Soap & Detergent Industry", "Petroleum Refining"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+
+  // ── Industrial Acids Group ──
+  {
+    name: "Industrial Acids Group",
+    slug: "industrial-acids",
+    description: "Technical and food-grade acids for manufacturing, metal processing, and laboratory applications.",
+    products: [
+      {
+        name: "Hydrochloric Acid (HCl)",
+        slug: "hydrochloric-acid",
+        image: hydrochloric_acid,
+        specifications: [
+          { srNo: 1, characteristic: "Usage", specification: "Industrial" },
+          { srNo: 2, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 3, characteristic: "Physical State", specification: "Liquid" },
+        ],
+        caution: "Causes severe skin burns; Toxic by inhalation",
+        applications: ["Metal Cleaning", "Chemical Synthesis", "pH Control", "Oil Well Acidizing", "Food Processing", "Water Treatment"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Dilute Sulphuric Acid (H₂SO₄)",
+        slug: "dilute-sulphuric-acid",
+        image: dilute_sulphuric_acid,
+        specifications: [
+          { srNo: 1, characteristic: "Molecular Formula", specification: "H₂SO₄" },
+          { srNo: 2, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 3, characteristic: "Usage", specification: "Laboratory / Industrial" },
+        ],
+        caution: "Causes severe skin burns; Corrosive to metals",
+        applications: ["Textile Industry", "Dyes Industry", "Alum Manufacturing", "Laboratory Use", "Battery Manufacturing"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Sulphuric Acid (H₂SO₄) 98%",
+        slug: "sulphuric-acid",
+        image: sulphuric_acid,
+        specifications: [
+          { srNo: 1, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 2, characteristic: "Purity", specification: "% 98.00 min" },
+          { srNo: 3, characteristic: "Physical State", specification: "Liquid" },
+        ],
+        caution: "Causes severe skin burns; Corrosive",
+        applications: ["Fertilizer Manufacturing", "Chemical Processing", "Petroleum Refining", "Metal Processing", "Battery Manufacturing"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Phosphoric Acid (H₃PO₄)",
+        slug: "phosphoric-acid",
+        image: phosphoric_acid,
+        specifications: [
+          { srNo: 1, characteristic: "Grade", specification: "Industrial / Food Grade" },
+          { srNo: 2, characteristic: "Application", specification: "Industrial" },
+          { srNo: 3, characteristic: "Physical State", specification: "Liquid" },
+        ],
+        caution: "Causes skin irritation; Corrosive",
+        applications: ["Fertilizer Production", "Food & Beverage Industry", "Metal Treatment", "Detergent Manufacturing", "Water Treatment"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+
+  // ── Caustic Potash Group (DETAILED SPECS from user) ──
+  {
+    name: "Caustic Potash Group",
+    slug: "caustic-potash",
+    description: "Premium potassium-based chemicals for pharmaceutical, fertilizer, and chemical manufacturing.",
+    products: [
+      {
+        name: "CAUSTIC POTASH LYE (KOH)",
+        slug: "caustic-potash-lye",
+        image: caustic_potash_lye,
+        specifications: [
+          { srNo: 1, characteristic: "Potassium Hydroxide (as KOH)", specification: "% 47.00 min" },
+          { srNo: 2, characteristic: "Potassium Carbonate (as K₂CO₃)", specification: "% 00.50 max" },
+          { srNo: 3, characteristic: "Chloride (as KCl)", specification: "% 150.00 max" },
+          { srNo: 4, characteristic: "Iron (as Fe+++)", specification: "ppm 20.00 max" },
+        ],
+        caution: "Harmful to Animals & Plant Tissues; Corrosive",
+        applications: ["Potassium Carbonate", "Dye Stuff industry", "Rubber Chemicals", "Potassium Permanganate", "Acid Neutralization", "Other Potassium based chemicals", "Pharmaceutical industry"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "CAUSTIC POTASH FLAKES (KOH)",
+        slug: "caustic-potash-flakes",
+        image: caustic_potash_flakes,
+        specifications: [
+          { srNo: 1, characteristic: "Potassium Hydroxide (as KOH) Gr I", specification: "% 90.00 min" },
+          { srNo: 2, characteristic: "Potassium Hydroxide (as KOH) Gr II", specification: "% 87.00 min" },
+          { srNo: 3, characteristic: "Potassium Carbonate (as K₂CO₃)", specification: "% 1.00 max" },
+          { srNo: 4, characteristic: "Chloride (as KCl)", specification: "ppm 300.00 max" },
+          { srNo: 5, characteristic: "Iron (as Fe+++)", specification: "ppm 20.00 max" },
+        ],
+        caution: "Harmful to Animals & Plant Tissues; Corrosive",
+        applications: ["Potassium Carbonate manufacturing", "Dye Stuff industry", "Rubber Chemicals", "Potassium Permanganate manufacture", "Acid Neutralization", "Other Potassium based chemicals", "Pharmaceutical industry", "Petroleum Refining", "Fertilizer Ind", "Cosmetic Ind"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "POTASSIUM CARBONATE (K₂CO₃) - Powder & Granules",
+        slug: "potassium-carbonate",
+        image: potassium_carbonate,
+        specifications: [
+          { srNo: 1, characteristic: "Total Alkalinity (as K₂CO₃) on dry basis", specification: "% 99.00 min" },
+          { srNo: 2, characteristic: "Free Alkali as KOH", specification: "% 00.20 max" },
+          { srNo: 3, characteristic: "Bi Carbonate (as KHCO₃)", specification: "% 00.40 max" },
+          { srNo: 4, characteristic: "Chloride (as KCl)", specification: "ppm 150.00 max" },
+          { srNo: 5, characteristic: "Iron (as Fe+++)", specification: "ppm 10.00 max" },
+        ],
+        caution: "Decomposes when heated, emitting toxic fumes",
+        applications: ["GLS lamps and Ophthalmic glasses", "Fertilizer industry", "Rubber Chemicals", "Pesticide Industry", "Dyes industries and other Potassium based chemicals", "Pharmaceutical Industry", "Agricultural Ind.", "Glass Industries"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+
+  // ── Hydrogen Peroxide Group ──
+  {
+    name: "Hydrogen Peroxide Group",
+    slug: "hydrogen-peroxide",
+    description: "Stabilized hydrogen peroxide and related products for bleaching, disinfection, and oxidation.",
+    products: [
+      {
+        name: "Hydrogen Peroxide (H₂O₂)",
+        slug: "hydrogen-peroxide",
+        image: hydrogen_peroxide,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "7722-84-1" },
+          { srNo: 2, characteristic: "Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Oxidizing; Causes serious eye damage",
+        applications: ["Paper Industry", "Textile Industry", "Sugar Industry", "Coir & Tobacco Industries", "Oxidizing agent for silver ornaments", "Antiseptic agent in Pharmaceuticals"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+
+  // ── Chlorination Chemicals Group ──
+  {
+    name: "Chlorination Chemicals Group",
+    slug: "chlorination-chemicals",
+    description: "Chlorine-based chemicals for water treatment, synthesis, and industrial manufacturing.",
+    products: [
+      {
+        name: "Aluminium Chloride (AlCl₃)",
+        slug: "aluminium-chloride",
+        image: aluminium_chloride,
+        specifications: [
+          { srNo: 1, characteristic: "Form", specification: "Powder" },
+          { srNo: 2, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 3, characteristic: "Storage", specification: "Room Temperature" },
+        ],
+        caution: "Corrosive; Reacts violently with water",
+        applications: ["Water Treatment", "Catalysis", "Chemical Synthesis", "Petroleum Refining"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Benzyl Chloride (C₆H₅CH₂Cl)",
+        slug: "benzyl-chloride",
+        image: benzyl_chloride,
+        specifications: [
+          { srNo: 1, characteristic: "Purity", specification: "% 99.00 min" },
+          { srNo: 2, characteristic: "Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Harmful if inhaled; Irritating to eyes and skin",
+        applications: ["Pharmaceutical Intermediates", "Dye Manufacturing", "Flavor & Fragrance", "Chemical Synthesis"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Liquid Chlorine (Cl₂)",
+        slug: "liquid-chlorine",
+        image: liquid_chlorine,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "7782-50-5" },
+          { srNo: 2, characteristic: "Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Storage", specification: "Room Temperature" },
+        ],
+        caution: "Toxic by inhalation; Causes severe burns",
+        applications: ["Synthetic Rubber", "Chlorinated Hydrocarbons", "Sanitizing Agent", "Water Purification"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Poly Aluminium Chloride (PAC)",
+        slug: "poly-aluminium-chloride",
+        image: poly_aluminium_chloride,
+        specifications: [
+          { srNo: 1, characteristic: "Form", specification: "Powder" },
+          { srNo: 2, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 3, characteristic: "Application", specification: "Water Treatment" },
+        ],
+        caution: "May cause skin and eye irritation",
+        applications: ["Water Treatment", "Wastewater Treatment", "Paper Manufacturing", "Textile Industry"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Stable Bleaching Powder (Ca(OCl)₂)",
+        slug: "stable-bleaching-powder",
+        image: stable_bleaching_powder,
+        specifications: [
+          { srNo: 1, characteristic: "Form", specification: "Powder" },
+          { srNo: 2, characteristic: "Grade", specification: "Industrial Grade" },
+          { srNo: 3, characteristic: "Type", specification: "Bleaching Powder" },
+        ],
+        caution: "Oxidizing; Irritating to skin and eyes",
+        applications: ["Water Disinfection", "Textile Bleaching", "Paper Industry", "Sanitation"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Sodium Hypochlorite (NaOCl)",
+        slug: "sodium-hypochlorite",
+        image: sodium_hypochlorite,
+        specifications: [
+          { srNo: 1, characteristic: "Physical State", specification: "Liquid" },
+          { srNo: 2, characteristic: "Purity", specification: "% 99.00 min" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Causes skin burns; Toxic to aquatic life",
+        applications: ["Sanitization", "Water Treatment", "Textile Bleaching", "Disinfection"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+
+  // ── Other Chemicals Group ──
+  {
+    name: "Other Chemicals Group",
+    slug: "other-chemicals",
+    description: "Specialty chemicals, solvents, and intermediates for diverse industrial applications.",
+    products: [
+      {
+        name: "Sodium Chlorate (NaClO₃)",
+        slug: "sodium-chlorate",
+        image: sodium_chlorate,
+        specifications: [
+          { srNo: 1, characteristic: "Structural Formula", specification: "NaClO₃" },
+          { srNo: 2, characteristic: "Color", specification: "White" },
+          { srNo: 3, characteristic: "Application", specification: "Pharmaceutical, Acetylene Gas" },
+        ],
+        caution: "Oxidizing; May intensify fire",
+        applications: ["Pharmaceutical", "Acetylene Gas", "Paper Bleaching", "Herbicides"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Methylene Chloride MDC (CH₂Cl₂)",
+        slug: "methylene-chloride-mdc",
+        image: methylene_chloride,
+        specifications: [
+          { srNo: 1, characteristic: "Chemical Name", specification: "Methylene Chloride" },
+          { srNo: 2, characteristic: "Physical State", specification: "Liquid" },
+          { srNo: 3, characteristic: "Purity", specification: "% >99.00" },
+        ],
+        caution: "Harmful if inhaled; Suspected carcinogen",
+        applications: ["Paint Stripping", "Extraction Solvent", "Pharmaceutical Manufacturing", "Degreasing"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Potassium Permanganate (KMnO₄)",
+        slug: "potassium-permanganate",
+        image: potassium_permanganate,
+        specifications: [
+          { srNo: 1, characteristic: "Grade", specification: "Technical Grade" },
+          { srNo: 2, characteristic: "Physical Form", specification: "Crystal / Powder" },
+          { srNo: 3, characteristic: "Storage", specification: "Room Temperature" },
+        ],
+        caution: "Oxidizing; Causes burns",
+        applications: ["Water Treatment", "Chemical Synthesis", "Medical Applications", "Metal Finishing"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Hydrazine Hydrate (N₂H₄·H₂O)",
+        slug: "hydrazine-hydrate",
+        image: hydrazine_hydrate,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "110-82-7" },
+          { srNo: 2, characteristic: "Physical Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Toxic; Suspected carcinogen; Harmful to aquatic environment",
+        applications: ["Reducing Agent", "Oxygen Scavenger (Boiler Water)", "Anti-tubercular Drug (Hydralazine)", "Agricultural Chemicals", "Pharmaceutical Industry"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Chloroform (CHCl₃)",
+        slug: "chloroform",
+        image: chloroform,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "67-66-3" },
+          { srNo: 2, characteristic: "Physical Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Purity", specification: "% 99.90 min" },
+        ],
+        caution: "Harmful if inhaled or swallowed; Irritating to skin",
+        applications: ["Fire Fighting Agent", "Soil Fumigants", "Pharmaceutical Preparations", "Chemical Solvent"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Benzaldehyde (C₆H₅CHO) 99.5%",
+        slug: "benzaldehyde",
+        image: benzaldehyde,
+        specifications: [
+          { srNo: 1, characteristic: "Type", specification: "Benzaldehyde" },
+          { srNo: 2, characteristic: "Purity", specification: "% 99.50 min" },
+          { srNo: 3, characteristic: "Grade", specification: "Industrial Grade" },
+        ],
+        caution: "Harmful if swallowed; Irritating to skin and eyes",
+        applications: ["Flavor & Fragrance", "Pharmaceutical Industry", "Dye Manufacturing", "Chemical Synthesis"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Chlorinated Paraffin",
+        slug: "chlorinated-paraffin",
+        image: chlorinated_paraffin,
+        specifications: [
+          { srNo: 1, characteristic: "CAS No", specification: "63449-39-8" },
+          { srNo: 2, characteristic: "Physical Form", specification: "Liquid" },
+          { srNo: 3, characteristic: "Storage", specification: "Room Temperature" },
+        ],
+        caution: "Harmful to aquatic organisms",
+        applications: ["Flame Retardant", "Secondary Plasticizer", "Rubber Industry", "Paints & Adhesives", "Sealants & Plastics"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+      {
+        name: "Benzyl Alcohol (C₆H₅CH₂OH)",
+        slug: "benzyl-alcohol",
+        image: benzyl_alcohol,
+        specifications: [
+          { srNo: 1, characteristic: "Grade", specification: "Pharmaceutical Grade" },
+          { srNo: 2, characteristic: "Type", specification: "Benzyl Alcohol" },
+          { srNo: 3, characteristic: "Form", specification: "Liquid" },
+        ],
+        caution: "Harmful if swallowed in large quantities",
+        applications: ["Solvent", "Preservative", "Pharmaceutical Industry", "Personal Care Products", "Chemical Intermediate"],
+        hasLeaflet: true, hasMSDS: true,
+      },
+    ],
+  },
+];
+
+// --- Helper Functions ---
+
+export function getAllGroups(): ProductGroup[] {
+  return productGroups;
+}
+
+export function getFeaturedGroups(): ProductGroup[] {
+  return productGroups.slice(0, 4);
+}
+
+export function getGroupBySlug(slug: string): ProductGroup | undefined {
+  return productGroups.find((g) => g.slug === slug);
+}
+
+export function getProductBySlug(groupSlug: string, productSlug: string): Product | undefined {
+  const group = getGroupBySlug(groupSlug);
+  return group?.products.find((p) => p.slug === productSlug);
+}
+
+export function getProductCount(): number {
+  return productGroups.reduce((sum, g) => sum + g.products.length, 0);
+}
