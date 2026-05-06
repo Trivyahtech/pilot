@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PILOT IMPEX - Chemical Suppliers</title>
     <link rel="icon" type="image/x-icon" href="./public/favicon.png" />
+    <link rel="canonical" href="https://bucolic-strudel-e38d3a.netlify.app/" />
     <meta name="description" content="Trusted chemical supplier since 1992. Dealer of GACL chemicals and specialty chemicals with nationwide delivery." />
     <meta name="author" content="PILOT IMPEX" />
 
@@ -16,6 +17,7 @@
     <meta property="og:title" content="PILOT IMPEX - Chemical Suppliers Since 1992" />
     <meta property="og:description" content="Trusted chemical supplier since 1992. Dealer of GACL chemicals and specialty chemicals with nationwide delivery." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bucolic-strudel-e38d3a.netlify.app/" />
     <meta property="og:image" content="/favicon.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -23,6 +25,19 @@
   </head>
 
   <body>
+    <form name="contact" method="POST" data-netlify="true" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="firstName" />
+      <input name="lastName" />
+      <input name="email" />
+      <input name="mobile" />
+      <input name="mobileNumber" />
+      <input name="inquiryType" />
+      <input name="product" />
+      <input name="company" />
+      <input name="companyName" />
+      <textarea name="requirement"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -74,13 +74,20 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send POST request to the API
-      const response = await fetch(`${API_BASE_URL}/form`, {
+      const submissionData = {
+        ...formData,
+        companyName: formData.company,
+        mobileNumber: formData.mobile,
+      };
+      const useNetlifyForms = import.meta.env.PROD && !API_BASE_URL;
+      const response = await fetch(useNetlifyForms ? "/" : `${API_BASE_URL}/form`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        headers: useNetlifyForms
+          ? { "Content-Type": "application/x-www-form-urlencoded" }
+          : { "Content-Type": "application/json" },
+        body: useNetlifyForms
+          ? new URLSearchParams({ "form-name": "contact", ...submissionData }).toString()
+          : JSON.stringify(submissionData),
       });
 
       if (!response.ok) {

@@ -26,8 +26,15 @@ const PORT = Number(process.env.PORT || 3000);
 const SESSION_COOKIE = "pilot_admin_session";
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
 const sessions = new Map();
+const defaultCorsOrigins = [
+  "http://localhost:8080",
+  "http://127.0.0.1:8080",
+  "http://localhost:8081",
+  "http://127.0.0.1:8081",
+  "https://bucolic-strudel-e38d3a.netlify.app",
+];
 
-const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:8080,http://127.0.0.1:8080,http://localhost:8081,http://127.0.0.1:8081")
+const allowedOrigins = (process.env.CORS_ORIGIN || defaultCorsOrigins.join(","))
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
@@ -128,20 +135,24 @@ function requireAdmin(req, res, next) {
 }
 
 function setSessionCookie(res, token) {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.cookie(SESSION_COOKIE, token, {
     httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
     maxAge: SESSION_TTL_MS,
     path: "/",
   });
 }
 
 function clearSessionCookie(res) {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.clearCookie(SESSION_COOKIE, {
     httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
     path: "/",
   });
 }

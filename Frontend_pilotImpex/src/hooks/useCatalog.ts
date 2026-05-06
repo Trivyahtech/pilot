@@ -63,10 +63,30 @@ export function normalizeCatalog(catalog: Catalog): Catalog {
 
 export const EMPTY_CATALOG: Catalog = { groups: [] };
 
-export async function fetchCatalog(): Promise<Catalog> {
-  const response = await fetch(`${API_BASE_URL}/catalog`);
+async function loadCatalogFrom(url: string): Promise<Catalog> {
+  const response = await fetch(url);
   if (!response.ok) throw new Error("Unable to load product catalog.");
-  return normalizeCatalog(await response.json());
+
+  const text = await response.text();
+  try {
+    return normalizeCatalog(JSON.parse(text));
+  } catch {
+    throw new Error("Unable to load product catalog.");
+  }
+}
+
+export async function fetchCatalog(): Promise<Catalog> {
+  const catalogUrls = API_BASE_URL ? [`${API_BASE_URL}/catalog`] : ["/catalog", "/catalog.json"];
+
+  for (const url of catalogUrls) {
+    try {
+      return await loadCatalogFrom(url);
+    } catch {
+      // Try the next source. Netlify serves the static catalog when no API base URL is configured.
+    }
+  }
+
+  throw new Error("Unable to load product catalog.");
 }
 
 export function useCatalog() {
