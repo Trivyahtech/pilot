@@ -980,13 +980,6 @@
       "slug": "test",
       "description": "none",
       "order": 7,
-      "products": []
-    },
-    {
-      "name": "Femotidine",
-      "slug": "femotidine",
-      "description": "abc",
-      "order": 18,
       "products": [
         {
           "name": "BASIC PACKAGE",
@@ -1043,7 +1036,14 @@
           "purityValue": 99
         }
       ]
+    },
+    {
+      "name": "Femotidine",
+      "slug": "femotidine",
+      "description": "abc",
+      "order": 18,
+      "products": []
     }
   ],
-  "updatedAt": "2026-05-04T13:58:35.969Z"
+  "updatedAt": "2026-05-04T13:58:13.115Z"
 }

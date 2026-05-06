@@ -38,7 +38,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Caustic Soda Lye.png"
         },
         {
           "name": "Caustic Soda Flakes (NaOH)",
@@ -72,7 +73,8 @@
           ],
           "documents": [],
           "order": 2,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Caustic Soda Flakes.png"
         },
         {
           "name": "Caustic Soda Prills (NaOH)",
@@ -105,7 +107,8 @@
           ],
           "documents": [],
           "order": 3,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Caustic-Soda-Prills.png"
         }
       ]
     },
@@ -147,7 +150,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Hydrochloric Acid.png"
         },
         {
           "name": "Dilute Sulphuric Acid (H₂SO₄)",
@@ -180,7 +184,8 @@
           ],
           "documents": [],
           "order": 2,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Dilute Sulphuric Acid.png"
         },
         {
           "name": "Sulphuric Acid (H₂SO₄) 98%",
@@ -213,7 +218,8 @@
           ],
           "documents": [],
           "order": 3,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Sulphuric Acid.png"
         },
         {
           "name": "Phosphoric Acid (H₃PO₄)",
@@ -246,7 +252,8 @@
           ],
           "documents": [],
           "order": 4,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Phosphoric Acid.png"
         }
       ]
     },
@@ -294,7 +301,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Caustic Potash Lye.png"
         },
         {
           "name": "CAUSTIC POTASH FLAKES (KOH)",
@@ -352,7 +360,8 @@
             }
           ],
           "order": 2,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Caustic Potash Flakes.png"
         },
         {
           "name": "POTASSIUM CARBONATE (K₂CO₃) - Powder & Granules",
@@ -398,7 +407,8 @@
           ],
           "documents": [],
           "order": 3,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Potassium Carbonate.png"
         },
         {
           "name": "TEST",
@@ -466,7 +476,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Hydrogen Peroxide.png"
         }
       ]
     },
@@ -506,7 +517,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Aluminium Chloride.png"
         },
         {
           "name": "Benzyl Chloride (C₆H₅CH₂Cl)",
@@ -538,7 +550,8 @@
           ],
           "documents": [],
           "order": 2,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Benzyl Chloride.png"
         },
         {
           "name": "Liquid Chlorine (Cl₂)",
@@ -570,7 +583,8 @@
           ],
           "documents": [],
           "order": 3,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Liquid Chlorine.png"
         },
         {
           "name": "Poly Aluminium Chloride (PAC)",
@@ -602,7 +616,8 @@
           ],
           "documents": [],
           "order": 4,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Poly Aluminium Chloride.png"
         },
         {
           "name": "Stable Bleaching Powder (Ca(OCl)₂)",
@@ -634,7 +649,8 @@
           ],
           "documents": [],
           "order": 5,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Stable Bleaching Powder.png"
         },
         {
           "name": "Sodium Hypochlorite (NaOCl)",
@@ -666,7 +682,8 @@
           ],
           "documents": [],
           "order": 6,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Sodium Hypochlorite.png"
         }
       ]
     },
@@ -706,7 +723,8 @@
           ],
           "documents": [],
           "order": 1,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Sodium Chlorate.png"
         },
         {
           "name": "test``",
@@ -776,7 +794,8 @@
           ],
           "documents": [],
           "order": 2,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Methylene Chloride MDC.png"
         },
         {
           "name": "Potassium Permanganate (KMnO₄)",
@@ -808,7 +827,8 @@
           ],
           "documents": [],
           "order": 3,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Potassium Permanganate.png"
         },
         {
           "name": "Hydrazine Hydrate (N₂H₄·H₂O)",
@@ -841,7 +861,8 @@
           ],
           "documents": [],
           "order": 4,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Hydrazine Hydrate.png"
         },
         {
           "name": "Chloroform (CHCl₃)",
@@ -873,7 +894,8 @@
           ],
           "documents": [],
           "order": 5,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Chloroform.png"
         },
         {
           "name": "Benzaldehyde (C₆H₅CHO) 99.5%",
@@ -905,7 +927,8 @@
           ],
           "documents": [],
           "order": 6,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Benzaldehyde.png"
         },
         {
           "name": "Chlorinated Paraffin",
@@ -938,7 +961,8 @@
           ],
           "documents": [],
           "order": 7,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Chlorinated Paraffin.png"
         },
         {
           "name": "Benzyl Alcohol (C₆H₅CH₂OH)",
@@ -971,7 +995,8 @@
           ],
           "documents": [],
           "order": 8,
-          "inStock": true
+          "inStock": true,
+          "imageOriginalName": "Benzyl Alcohol.png"
         }
       ]
     },
@@ -980,13 +1005,6 @@
       "slug": "test",
       "description": "none",
       "order": 7,
-      "products": []
-    },
-    {
-      "name": "Femotidine",
-      "slug": "femotidine",
-      "description": "abc",
-      "order": 18,
       "products": [
         {
           "name": "BASIC PACKAGE",
@@ -1045,5 +1063,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-05-04T13:58:35.969Z"
+  "updatedAt": "2026-05-03T07:01:31.886Z"
 }
