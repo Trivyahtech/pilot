@@ -31,7 +31,6 @@ const defaultCorsOrigins = [
   "http://127.0.0.1:8080",
   "http://localhost:8081",
   "http://127.0.0.1:8081",
-  "https://bucolic-strudel-e38d3a.netlify.app",
 ];
 
 const allowedOrigins = (process.env.CORS_ORIGIN || defaultCorsOrigins.join(","))
