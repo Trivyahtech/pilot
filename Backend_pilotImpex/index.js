@@ -41,7 +41,7 @@ const allowedOrigins = (process.env.CORS_ORIGIN || defaultCorsOrigins.join(","))
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.ngrok-free.dev')) return callback(null, true);
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.ngrok-free.dev') || origin.endsWith('.vercel.app')) return callback(null, true);
       return callback(new Error("Origin is not allowed by CORS."));
     },
     credentials: true,
