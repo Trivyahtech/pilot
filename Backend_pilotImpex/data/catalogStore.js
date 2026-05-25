@@ -6,6 +6,7 @@ const DATA_DIR = __dirname;
 const CATALOG_PATH = path.join(DATA_DIR, "catalog.json");
 const BACKUP_DIR = path.join(DATA_DIR, "backups");
 const UPLOADS_DIR = path.join(DATA_DIR, "..", "uploads");
+const SEEDS_DIR = path.join(DATA_DIR, "seeds");
 
 function httpError(status, message) {
   const error = new Error(message);
@@ -23,6 +24,18 @@ function ensureStorage() {
       CATALOG_PATH,
       JSON.stringify({ groups: [], updatedAt: new Date().toISOString() }, null, 2) + "\n"
     );
+  }
+
+  // Copy any missing seed images from data/seeds/ into uploads/ on every startup.
+  // This ensures production servers that start with an empty uploads/ directory
+  // still serve all product images that the committed catalog.json references.
+  if (fs.existsSync(SEEDS_DIR)) {
+    for (const file of fs.readdirSync(SEEDS_DIR)) {
+      const dest = path.join(UPLOADS_DIR, file);
+      if (!fs.existsSync(dest)) {
+        fs.copyFileSync(path.join(SEEDS_DIR, file), dest);
+      }
+    }
   }
 }
 
