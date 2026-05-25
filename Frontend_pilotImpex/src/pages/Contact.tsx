@@ -409,8 +409,8 @@ export default function Contact() {
                     <Phone className="w-5 h-5 text-primary" />
                     <div>
                       <p className="text-foreground font-medium">Phone</p>
-                      <a href="tel:08045804678" className="text-primary hover:underline">
-                        08045804678
+                      <a href="tel:918460740387" className="text-primary hover:underline">
+                        +91 8460740387
                       </a>
                     </div>
                   </div>

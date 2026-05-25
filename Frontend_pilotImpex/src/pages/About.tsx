@@ -183,36 +183,6 @@ export default function About() {
 
       {/* Stats Section */}
       <section className="py-16 relative overflow-hidden bg-brand-accent">
-        <div className="container mx-auto px-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white text-center mb-8">
-            Our Authorized Dealers
-          </h2>
-          <div className="flex flex-wrap justify-center gap-6 mt-8">
-            {dealerLogos.map((dealer, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-md"
-                style={{ minWidth: "140px" }}
-              >
-                <img
-                  src={dealer.logo}
-                  alt={dealer.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-10 max-w-[110px] w-auto object-contain"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
-                />
-                <span className="text-xs font-semibold text-gray-700 tracking-wide">{dealer.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (

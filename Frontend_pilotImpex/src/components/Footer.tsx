@@ -62,7 +62,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
-                <a href="tel:08045804678" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">08045804678</a>
+                <a href="tel:918460740387" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">+91 8460740387</a>
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
@@ -96,7 +96,7 @@ export default function Footer() {
                 <a href="#" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/08045804678" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="WhatsApp">
+                <a href="https://wa.me/918460740387" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="WhatsApp">
                   <MessageCircle className="w-5 h-5" />
                 </a>
               </div>
