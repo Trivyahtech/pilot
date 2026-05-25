@@ -191,23 +191,20 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white rounded-xl px-6 py-4 flex items-center justify-center border border-white/20 hover:scale-105 transition-all duration-300 shadow-md"
-                style={{ minWidth: "140px", height: "72px" }}
+                className="bg-transparent rounded-xl px-6 py-4 flex flex-col items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all duration-300"
+                style={{ minWidth: "140px" }}
               >
                 <img
                   src={dealer.logo}
                   alt={dealer.name}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-10 max-w-[120px] w-auto object-contain"
+                  className="max-h-10 max-w-[120px] w-auto object-contain brightness-0 invert"
                   onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                    const span = target.nextElementSibling as HTMLElement;
-                    if (span) span.style.display = "block";
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
                   }}
                 />
-                <span className="hidden text-sm font-semibold text-gray-700">{dealer.name}</span>
+                <span className="text-xs font-semibold text-white/80 tracking-wide">{dealer.name}</span>
               </motion.div>
             ))}
           </div>
@@ -304,7 +301,7 @@ export default function About() {
           <div className="relative overflow-hidden">
             <div className="flex space-x-12 animate-marquee">
               {[...dealerLogos, ...dealerLogos].map((dealer, index) => (
-                <div key={index} className="flex-shrink-0 w-48 h-24 bg-background rounded-lg border border-border flex flex-col items-center justify-center gap-2 px-4">
+                <div key={index} className="flex-shrink-0 w-48 h-28 bg-transparent rounded-lg border border-border flex flex-col items-center justify-center gap-2 px-4">
                   <img
                     src={dealer.logo}
                     alt={dealer.name}
@@ -312,13 +309,10 @@ export default function About() {
                     decoding="async"
                     className="max-h-12 max-w-[140px] w-auto object-contain"
                     onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = "none";
-                      const span = target.nextElementSibling as HTMLElement;
-                      if (span) span.style.display = "block";
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}
                   />
-                  <span className="hidden font-heading font-semibold text-primary text-sm text-center">{dealer.name}</span>
+                  <span className="font-medium text-foreground text-xs text-center">{dealer.name}</span>
                 </div>
               ))}
             </div>
