@@ -709,6 +709,44 @@
           "inStock": true
         },
         {
+          "name": "test``",
+          "slug": "teste",
+          "image": "/uploads/1777774188197-335865998f86d5cc-images.png",
+          "specifications": [
+            {
+              "srNo": 1,
+              "characteristic": "abc",
+              "specification": "33"
+            }
+          ],
+          "caution": "bass",
+          "applications": [
+            "bd",
+            "wd",
+            "we",
+            "rfer"
+          ],
+          "documents": [
+            {
+              "id": "cc6d982a-460f-4b27-bda3-82512f415d6f",
+              "name": "corekit",
+              "url": "/uploads/1777789923274-16a4d437e33632c1-corekit-master-document-annexure.pdf",
+              "originalName": "Corekit Master Document annexure.pdf",
+              "mimeType": "application/pdf",
+              "size": 57794,
+              "uploadedAt": "2026-05-03T06:32:03.277Z"
+            }
+          ],
+          "order": 1,
+          "unit": "44",
+          "moq": "5",
+          "description": "none",
+          "category": "bca",
+          "inStock": true,
+          "purity": "44",
+          "purityValue": 66
+        },
+        {
           "name": "Methylene Chloride MDC (CH₂Cl₂)",
           "slug": "methylene-chloride-mdc",
           "image": "/uploads/seed-methylene-chloride-mdc.png",
@@ -936,7 +974,21 @@
           "inStock": true
         }
       ]
+    },
+    {
+      "name": "Test",
+      "slug": "test",
+      "description": "none",
+      "order": 7,
+      "products": []
+    },
+    {
+      "name": "Femotidine",
+      "slug": "femotidine",
+      "description": "abc",
+      "order": 18,
+      "products": []
     }
   ],
-  "updatedAt": "2026-05-22T05:53:31.903Z"
+  "updatedAt": "2026-05-22T05:50:48.165Z"
 }

@@ -936,7 +936,14 @@
           "inStock": true
         }
       ]
+    },
+    {
+      "name": "Femotidine",
+      "slug": "femotidine",
+      "description": "abc",
+      "order": 18,
+      "products": []
     }
   ],
-  "updatedAt": "2026-05-22T05:53:31.903Z"
+  "updatedAt": "2026-05-22T05:53:21.518Z"
 }

@@ -3,12 +3,14 @@ import { ArrowRight, Star, Users, Truck, Shield } from "lucide-react";
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import ProductGroupCard from "@/components/ProductGroupCard";
+import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
-import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useCatalog } from "@/hooks/useCatalog";
+import benzylChlorideImg from "@/assets/Pilot Impex Product Image/Benzyl Chloride.png";
+import hydrogenPeroxideImg from "@/assets/Pilot Impex Product Image/Hydrogen Peroxide.png";
+import hydrazineHydrateImg from "@/assets/Pilot Impex Product Image/Hydrazine Hydrate.png";
+import phosphoricAcidImg from "@/assets/Pilot Impex Product Image/Phosphoric Acid.png";
 
 const features = [
   {
@@ -33,11 +35,42 @@ const features = [
   }
 ];
 
+const featuredProducts = [
+  {
+    name: "Benzyl Chloride",
+    description: "A key chlorination agent widely used in pharmaceutical synthesis, fragrance manufacturing, and dye production.",
+    image: benzylChlorideImg,
+    slug: "benzyl-chloride",
+    to: "/products/chlorination-chemicals",
+    category: "Chlorination Chemicals",
+  },
+  {
+    name: "Hydrogen Peroxide",
+    description: "Multi-grade oxidizing agent used for industrial bleaching, water treatment, and chemical synthesis.",
+    image: hydrogenPeroxideImg,
+    slug: "hydrogen-peroxide",
+    to: "/products/hydrogen-peroxide",
+    category: "Hydrogen Peroxide",
+  },
+  {
+    name: "Hydrazine Hydrate",
+    description: "High-purity reducing agent essential for boiler water treatment, pharmaceuticals, and agrochemical production.",
+    image: hydrazineHydrateImg,
+    slug: "hydrazine-hydrate",
+    to: "/products/other-chemicals",
+    category: "Specialty Chemicals",
+  },
+  {
+    name: "Phosphoric Acid",
+    description: "Food-grade and industrial acid used in fertilizers, metal surface treatment, and food & beverage processing.",
+    image: phosphoricAcidImg,
+    slug: "phosphoric-acid",
+    to: "/products/industrial-acids",
+    category: "Industrial Acids",
+  },
+];
+
 const Index = () => {
-  const { data: catalog, isError, isLoading, refetch } = useCatalog();
-  const groups = catalog?.groups ?? [];
-  const featuredGroups = groups.slice(0, 4);
-  const totalProducts = groups.reduce((sum, group) => sum + group.products.length, 0);
 
   useEffect(() => {
     // Check if we need to scroll to hero section
@@ -85,63 +118,57 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Popular Products Section */}
-      <section className="py-20 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-          <div className="absolute top-1/3 -right-20 w-96 h-96 bg-accent/5 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
-        </div>
-
-        {isLoading ? (
-          <CatalogLoadingState />
-        ) : isError ? (
-          <CatalogErrorState onRetry={() => refetch()} />
-        ) : (
-          <div className="container mx-auto px-4 relative">
-            <div className="text-center mb-16 max-w-4xl mx-auto">
-              <span className="section-badge">
-                Our Product Range
-              </span>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-                Industry-Leading <span className="text-primary">Chemical Solutions</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Explore our {featuredGroups.length} product groups with {totalProducts}+ industrial chemicals, engineered for excellence.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {featuredGroups.map((group, index) => (
-                <div 
-                  key={group.slug} 
-                  className="stagger-fade" 
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <ProductGroupCard group={group} />
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="px-8 py-4 group relative overflow-hidden transition-all duration-300 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 hover:text-foreground"
-                asChild
-              >
-                <Link to="/products" className="relative z-10 flex items-center justify-center gap-2">
-                  <span className="relative inline-flex flex-col items-center">
-                    <span>Explore All Products</span>
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/60 group-hover:w-full transition-all duration-300"></span>
-                  </span>
-                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
+      {/* Featured Products Showcase */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="section-badge">Featured Products</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+              Our <span className="text-primary">Flagship Chemicals</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Trusted by industries across India — explore our most sought-after chemical products.
+            </p>
           </div>
-        )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {featuredProducts.map((product, index) => (
+              <div
+                key={product.slug}
+                className="stagger-fade"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ProductCard
+                  name={product.name}
+                  description={product.description}
+                  image={product.image}
+                  slug={product.slug}
+                  to={product.to}
+                  category={product.category}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Explore All Products CTA */}
+      <section className="py-10 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <Button
+            variant="outline"
+            size="lg"
+            className="px-8 py-4 group relative overflow-hidden transition-all duration-300 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 hover:text-foreground"
+            asChild
+          >
+            <Link to="/products" className="relative z-10 flex items-center justify-center gap-2">
+              <span className="relative inline-flex flex-col items-center">
+                <span>Explore All Products</span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/60 group-hover:w-full transition-all duration-300"></span>
+              </span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
       </section>
 
       {/* Contact Form Section */}

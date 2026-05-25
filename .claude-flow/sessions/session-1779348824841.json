@@ -1,0 +1,14 @@
+{
+  "id": "session-1779348824841",
+  "startedAt": "2026-05-21T07:33:44.841Z",
+  "cwd": "/home/deadman/pilot",
+  "context": {},
+  "metrics": {
+    "edits": 2,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-05-21T07:42:16.323Z",
+  "duration": 511482
+}
