@@ -49,7 +49,7 @@ app.use(
 );
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", express.static(UPLOADS_DIR));
+app.use("/uploads", express.static(UPLOADS_DIR, { maxAge: "7d", immutable: true }));
 
 app.get("/", (_req, res) => res.json({ ok: true, service: "pilot-api", uptime: process.uptime() }));
 app.get("/health", (_req, res) => res.json({ ok: true, uptime: process.uptime() }));

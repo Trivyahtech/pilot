@@ -81,16 +81,16 @@ const stats = [
   { number: "1992", label: "Serving Since" },
   { number: "100+", label: "Products" },
   { number: "All India", label: "Delivery Network" },
-  { number: "5+", label: "Authorized Dealers" }
+  { number: "6+", label: "Authorized Dealers" }
 ];
 
-const authorizedDealers = ["GACL", "GNFC", "Epigral", "Grasim", "Universal"];
-
-const dealers = [
-  "GACL Chemicals",
-  "Specialty Chemicals",
-  "Industrial Solutions",
-  "Chemical Partners"
+const dealerLogos = [
+  { name: "GACL", logo: "https://gacl.com/wp-content/uploads/2023/12/gacl-final-logo-1024x149.png" },
+  { name: "GNFC", logo: "https://www.gnfc.in/wp-content/uploads/2018/02/logo.png" },
+  { name: "Epigral", logo: "https://epigral.com/wp-content/uploads/2023/08/epigral-logo-1.svg" },
+  { name: "Grasim", logo: "https://www.grasim.com/images/logo.jpg" },
+  { name: "Universal", logo: "https://universalchemicals.co/images/logo.png" },
+  { name: "DCM Shriram", logo: "https://www.dcmshriram.com/images/shriram-logo.svg" },
 ];
 
 export default function About() {
@@ -184,16 +184,30 @@ export default function About() {
             Our Authorized Dealers
           </h2>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
-            {authorizedDealers.map((dealer, index) => (
+            {dealerLogos.map((dealer, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 text-center border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="bg-white rounded-xl px-6 py-4 flex items-center justify-center border border-white/20 hover:scale-105 transition-all duration-300 shadow-md"
+                style={{ minWidth: "140px", height: "72px" }}
               >
-                <span className="text-white text-lg font-medium">{dealer}</span>
+                <img
+                  src={dealer.logo}
+                  alt={dealer.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-10 max-w-[120px] w-auto object-contain"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = "none";
+                    const span = target.nextElementSibling as HTMLElement;
+                    if (span) span.style.display = "block";
+                  }}
+                />
+                <span className="hidden text-sm font-semibold text-gray-700">{dealer.name}</span>
               </motion.div>
             ))}
           </div>
@@ -289,11 +303,22 @@ export default function About() {
           {/* Dealer Logos Marquee */}
           <div className="relative overflow-hidden">
             <div className="flex space-x-12 animate-marquee">
-              {[...dealers, ...dealers].map((dealer, index) => (
-                <div key={index} className="flex-shrink-0 w-48 h-24 bg-background rounded-lg border border-border flex items-center justify-center">
-                  <span className="font-heading font-semibold text-primary text-sm text-center px-4">
-                    {dealer}
-                  </span>
+              {[...dealerLogos, ...dealerLogos].map((dealer, index) => (
+                <div key={index} className="flex-shrink-0 w-48 h-24 bg-background rounded-lg border border-border flex flex-col items-center justify-center gap-2 px-4">
+                  <img
+                    src={dealer.logo}
+                    alt={dealer.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-h-12 max-w-[140px] w-auto object-contain"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                      const span = target.nextElementSibling as HTMLElement;
+                      if (span) span.style.display = "block";
+                    }}
+                  />
+                  <span className="hidden font-heading font-semibold text-primary text-sm text-center">{dealer.name}</span>
                 </div>
               ))}
             </div>

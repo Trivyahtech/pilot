@@ -20,6 +20,8 @@ export default function ProductGroupCard({ group }: ProductGroupCardProps) {
             <img
               src={firstImage}
               alt={group.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
             />
           ) : (

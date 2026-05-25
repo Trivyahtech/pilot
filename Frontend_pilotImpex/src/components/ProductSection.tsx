@@ -46,6 +46,8 @@ export default function ProductSection({ product, groupSlug }: ProductSectionPro
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
+                decoding="async"
                 className="max-h-16 w-auto object-contain drop-shadow-lg"
               />
             ) : (

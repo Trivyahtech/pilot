@@ -1,6 +1,6 @@
 {
-  "id": "session-1779714043860",
-  "startedAt": "2026-05-25T13:00:43.860Z",
+  "id": "session-1779715211063",
+  "startedAt": "2026-05-25T13:20:11.063Z",
   "cwd": "/home/deadman/pilot",
   "context": {},
   "metrics": {
@@ -8,6 +8,5 @@
     "commands": 0,
     "tasks": 0,
     "errors": 0
-  },
-  "restoredAt": "2026-05-25T13:00:48.270Z"
+  }
 }

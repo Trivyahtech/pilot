@@ -19,9 +19,11 @@ export default function ProductCard({ name, description, image, slug, category, 
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 z-0" />
         {image ? (
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt={name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
         ) : (
