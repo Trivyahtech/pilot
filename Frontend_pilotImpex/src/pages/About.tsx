@@ -1,4 +1,8 @@
 import { Award, Users, MapPin, Target } from "lucide-react";
+import gnfcLogo from "@/assets/dealer-logos/gnfc.png";
+import epigralLogo from "@/assets/dealer-logos/epigral.svg";
+import grasimLogo from "@/assets/dealer-logos/grasim.jpg";
+import dcmShriramLogo from "@/assets/dealer-logos/dcm-shriram.svg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -85,12 +89,12 @@ const stats = [
 ];
 
 const dealerLogos = [
-  { name: "GACL", logo: "https://gacl.com/wp-content/uploads/2023/12/gacl-final-logo-1024x149.png" },
-  { name: "GNFC", logo: "https://www.gnfc.in/wp-content/uploads/2018/02/logo.png" },
-  { name: "Epigral", logo: "https://epigral.com/wp-content/uploads/2023/08/epigral-logo-1.svg" },
-  { name: "Grasim", logo: "https://www.grasim.com/images/logo.jpg" },
+  { name: "GACL", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Gujarat_Alkalies_and_Chemicals_Limited.svg/250px-Gujarat_Alkalies_and_Chemicals_Limited.svg.png" },
+  { name: "GNFC", logo: gnfcLogo },
+  { name: "Epigral", logo: epigralLogo },
+  { name: "Grasim", logo: grasimLogo },
   { name: "Universal", logo: "https://universalchemicals.co/images/logo.png" },
-  { name: "DCM Shriram", logo: "https://www.dcmshriram.com/images/shriram-logo.svg" },
+  { name: "DCM Shriram", logo: dcmShriramLogo },
 ];
 
 export default function About() {
@@ -191,7 +195,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-transparent rounded-xl px-6 py-4 flex flex-col items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all duration-300"
+                className="bg-white rounded-xl px-5 py-4 flex flex-col items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-md"
                 style={{ minWidth: "140px" }}
               >
                 <img
@@ -199,12 +203,12 @@ export default function About() {
                   alt={dealer.name}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-10 max-w-[120px] w-auto object-contain brightness-0 invert"
+                  className="max-h-10 max-w-[110px] w-auto object-contain"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display = "none";
                   }}
                 />
-                <span className="text-xs font-semibold text-white/80 tracking-wide">{dealer.name}</span>
+                <span className="text-xs font-semibold text-gray-700 tracking-wide">{dealer.name}</span>
               </motion.div>
             ))}
           </div>
