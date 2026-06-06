@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /secret
 
-Sitemap: https://www.pilotimpex.com/sitemap.xml
+Sitemap: https://pilot-alpha-sage.vercel.app/sitemap.xml
