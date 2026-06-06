@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Package } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import ProductSection from "@/components/ProductSection";
 import { Button } from "@/components/ui/button";
@@ -14,11 +15,6 @@ export default function ProductGroupDetail() {
   const group = groupSlug ? catalog?.groups.find((item) => item.slug === groupSlug) : undefined;
 
   useEffect(() => {
-    if (group) {
-      document.title = `${group.name} | Pilot Impex`;
-    } else {
-      document.title = "Product Group Not Found | Pilot Impex";
-    }
     window.scrollTo(0, 0);
   }, [group]);
 
@@ -65,8 +61,25 @@ export default function ProductGroupDetail() {
     );
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pilotimpex.com" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.pilotimpex.com/products" },
+      { "@type": "ListItem", "position": 3, "name": group.name },
+    ],
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title={group.name}
+        description={`${group.description || group.name} — supplied by PILOT IMPEX, authorized chemical dealer in Vadodara, Gujarat. Nationwide delivery across India.`}
+        canonical={`/products/${groupSlug}`}
+        keywords={`${group.name} supplier India, buy ${group.name} bulk, ${group.name} price India, chemical supplier Vadodara`}
+        schema={breadcrumbSchema}
+      />
       <Navigation />
 
       <div className="pt-24">

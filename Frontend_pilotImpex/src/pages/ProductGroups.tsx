@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { CatalogErrorState, CatalogLoadingState } from "@/components/CatalogState";
 import ProductGroupCard from "@/components/ProductGroupCard";
@@ -12,7 +13,6 @@ export default function ProductGroups() {
   const { data: catalog, isError, isLoading, refetch } = useCatalog();
 
   useEffect(() => {
-    document.title = "Products | PILOT IMPEX - Chemical Suppliers Since 1992";
     window.scrollTo(0, 0);
   }, []);
 
@@ -21,6 +21,12 @@ export default function ProductGroups() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Chemical Products"
+        description="Browse our full range of industrial chemicals: caustic soda, industrial acids, caustic potash, hydrogen peroxide, chlorination chemicals and more. PILOT IMPEX — authorized supplier since 1992."
+        canonical="/products"
+        keywords="buy caustic soda India, hydrochloric acid supplier, sulphuric acid wholesale, hydrogen peroxide supplier India, industrial chemicals bulk, chemical products Vadodara Gujarat"
+      />
       <Navigation />
 
       {/* Page Header */}

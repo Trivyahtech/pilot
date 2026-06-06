@@ -1,4 +1,5 @@
 import { Award, Users, MapPin, Target } from "lucide-react";
+import SEO from "@/components/SEO";
 import gnfcLogo from "@/assets/dealer-logos/gnfc.png";
 import epigralLogo from "@/assets/dealer-logos/epigral.svg";
 import grasimLogo from "@/assets/dealer-logos/grasim.jpg";
@@ -98,13 +99,14 @@ const dealerLogos = [
 ];
 
 export default function About() {
-
-  useEffect(()=>{
-      document.title = "About Us | PILOT IMPEX - Chemical Suppliers Since 1992"
-    }, [])
-
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About Us"
+        description="Learn about PILOT IMPEX — a trusted chemical supplier since 1992 in Vadodara, Gujarat. Authorized dealer of GACL, GNFC, Epigral, Grasim chemicals serving all of India."
+        canonical="/about"
+        keywords="about Pilot Impex, chemical company Vadodara, GACL authorized dealer Gujarat, chemical distributor since 1992, industrial chemicals company India"
+      />
       <Navigation />
       
       <div className="pt-24">

@@ -3,6 +3,7 @@ import { useSearchParams, useLocation } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, User, Building2, ChevronDown } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,10 +14,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { API_BASE_URL } from "@/hooks/useCatalog";
 
 export default function Contact() {
-  useEffect(() => {
-    document.title = "Contact | PILOT IMPEX - Chemical Suppliers Since 1992";
-  }, []);
-
   const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -153,6 +150,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact Us"
+        description="Contact PILOT IMPEX for chemical inquiries. B-4, Bela Chamber, Vadodara 390001, Gujarat. Phone: 08045804678. Email: info@pilotimpex.com. Send us your requirement today."
+        canonical="/contact"
+        keywords="contact Pilot Impex, chemical inquiry Vadodara, chemical supplier contact Gujarat, order chemicals India, bulk chemical purchase inquiry"
+      />
       <Navigation />
 
       <div className="pt-24">
