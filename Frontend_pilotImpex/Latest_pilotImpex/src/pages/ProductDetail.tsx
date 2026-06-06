@@ -806,7 +806,7 @@ export default function ProductDetail() {
   const handleWhatsAppClick = () => {
     const productName = product.name; // Keep the original product name with spaces
     const message = `Hello, I'm interested in ${productName}. Could you please provide more information?`;
-    const phoneNumber = '918140444873'; // Updated WhatsApp number
+    const phoneNumber = '919313485973';
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 

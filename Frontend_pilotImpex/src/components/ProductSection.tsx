@@ -14,7 +14,7 @@ export default function ProductSection({ product, groupSlug }: ProductSectionPro
 
   const handleWhatsApp = () => {
     const message = `Hello, I'm interested in ${product.name}. Could you please provide more information?`;
-    const phoneNumber = "918140444873";
+    const phoneNumber = "919313485973";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 

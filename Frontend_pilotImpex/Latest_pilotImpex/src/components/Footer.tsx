@@ -96,7 +96,7 @@ export default function Footer() {
                 <a href="#" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/08045804678" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="WhatsApp">
+                <a href="https://wa.me/919313485973" className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:scale-105 transition-all duration-300" aria-label="WhatsApp">
                   <MessageCircle className="w-5 h-5" />
                 </a>
               </div>

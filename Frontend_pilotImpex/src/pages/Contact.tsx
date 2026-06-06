@@ -346,7 +346,7 @@ export default function Contact() {
                       onClick={() => {
                         const message =
                           "Hello, I have a general inquiry. Could you please provide more information?";
-                        const phoneNumber = "918460740387";
+                        const phoneNumber = "919313485973";
                         window.open(
                           `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
                           "_blank"

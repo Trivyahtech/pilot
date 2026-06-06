@@ -85,7 +85,7 @@ export default function ProductGroups() {
                     size="lg"
                     onClick={() => {
                       const message = "Hello, I'm looking for a specific chemical product. Can you help?";
-                      window.open(`https://wa.me/918140444873?text=${encodeURIComponent(message)}`, "_blank");
+                      window.open(`https://wa.me/919313485973?text=${encodeURIComponent(message)}`, "_blank");
                     }}
                   >
                     <MessageCircle className="mr-2 w-4 h-4" /> WhatsApp
