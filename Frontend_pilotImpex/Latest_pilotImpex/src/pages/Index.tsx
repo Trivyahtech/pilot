@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import hydrogen_peroxide from "../assets/Pilot Impex Product Image/Hydrogen Peroxide.png"
@@ -82,6 +83,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Chemical Suppliers in India"
+        description="PILOT IMPEX — India's trusted chemical supplier since 1992. Authorized dealer of GACL, GNFC, Epigral &amp; Grasim chemicals. Caustic soda, industrial acids, specialty chemicals with nationwide delivery."
+        canonical="/"
+        keywords="chemical supplier India, chemical distributor Vadodara Gujarat, GACL chemicals authorized dealer, caustic soda supplier India, industrial chemicals wholesale, bulk chemicals India, specialty chemicals supplier"
+      />
       <Navigation />
       <Hero />
       

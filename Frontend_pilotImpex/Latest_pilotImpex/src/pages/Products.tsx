@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -75,11 +76,6 @@ const allProducts = [
 const categories = ["All", "Caustic Soda", "Industrial Acids", "Caustic Potash", "Hydrogen Peroxide", "Chlorination Chemical", "Other Chemicals"];
 
 export default function Products() {
-
-  useEffect(()=>{
-    document.title = "Products | PILOT IMPEX - Chemical Suppliers Since 1992"
-  }, [])
-
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || "");
@@ -165,14 +161,20 @@ export default function Products() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Chemical Products"
+        description="Browse 100+ industrial chemicals: caustic soda, hydrochloric acid, sulphuric acid, hydrogen peroxide, benzyl chloride, and more. PILOT IMPEX — authorized chemical supplier since 1992."
+        canonical="/products"
+        keywords="buy caustic soda India, hydrochloric acid supplier, sulphuric acid wholesale, hydrogen peroxide supplier India, benzyl chloride, industrial chemicals bulk, chemical products Vadodara"
+      />
       <Navigation />
 
       <div className="pt-24">
-        <Breadcrumb 
+        <Breadcrumb
           items={[
             { label: 'Home', to: '/' },
             { label: 'Products' }
-          ]} 
+          ]}
         />
       </div>
 

@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Beaker, Package, Clock, CheckCircle, MessageCirc
 import Navigation from "@/components/Navigation";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -31,7 +32,6 @@ import chlorinated_paraffin from "../assets/Pilot Impex Product Image/Chlorinate
 import liquid_chlorine from "../assets/Pilot Impex Product Image/Liquid Chlorine.png";
 import benzyl_alcohol from "../assets/Pilot Impex Product Image/Benzyl Alcohol.png";
 import potassium_carbonate from "../assets/Pilot Impex Product Image/Potassium Carbonate.png";
-import { useEffect } from "react";
 
 // TypeScript interface for product details
 interface Product {
@@ -786,10 +786,6 @@ const allProducts = [
 ];
 
 export default function ProductDetail() {
-  useEffect(() => {
-    document.title = product.name + " | Pilot Impex";
-  }, []);
-
   const { slug } = useParams<{ slug: string }>();
 
   if (!slug) {
@@ -798,6 +794,41 @@ export default function ProductDetail() {
 
   const product = productDetails[slug] || getDefaultProduct(slug);
   const suggestedProducts = allProducts.filter((p) => product.suggestedProducts.includes(p.slug));
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "category": product.category,
+    "brand": {
+      "@type": "Brand",
+      "name": "PILOT IMPEX"
+    },
+    "offers": {
+      "@type": "Offer",
+      "seller": {
+        "@type": "Organization",
+        "name": "PILOT IMPEX",
+        "url": "https://www.pilotimpex.com"
+      },
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "INR"
+      }
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.pilotimpex.com" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.pilotimpex.com/products" },
+      { "@type": "ListItem", "position": 3, "name": product.name }
+    ]
+  };
 
   const scrollToInquiry = () => {
     window.location.href = `/contact?product=${encodeURIComponent(product.name)}`;
@@ -812,6 +843,13 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title={product.name}
+        description={`${product.description} Supplied by PILOT IMPEX — authorized chemical dealer in Vadodara, Gujarat. Minimum order 1-2 MT. Nationwide delivery.`}
+        canonical={`/products/${slug}`}
+        keywords={`${product.name} supplier India, buy ${product.name} bulk, ${product.name} price India, ${product.category} supplier Vadodara`}
+        schema={[productSchema, breadcrumbSchema]}
+      />
       <Navigation />
 
       <div className="pt-24">

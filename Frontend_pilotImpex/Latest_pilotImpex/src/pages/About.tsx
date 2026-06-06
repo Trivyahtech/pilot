@@ -2,6 +2,7 @@ import { Award, Users, MapPin, Target } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -94,13 +95,14 @@ const dealers = [
 ];
 
 export default function About() {
-
-  useEffect(()=>{
-      document.title = "About Us | PILOT IMPEX - Chemical Suppliers Since 1992"
-    }, [])
-
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About Us"
+        description="Learn about PILOT IMPEX — a trusted chemical supplier since 1992 in Vadodara, Gujarat. Authorized dealer of GACL, GNFC, Epigral, Grasim chemicals serving all of India."
+        canonical="/about"
+        keywords="about Pilot Impex, chemical company Vadodara, GACL authorized dealer Gujarat, chemical distributor since 1992, industrial chemicals company India"
+      />
       <Navigation />
       
       <div className="pt-24">
