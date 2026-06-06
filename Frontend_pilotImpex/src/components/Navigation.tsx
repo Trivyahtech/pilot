@@ -167,7 +167,7 @@ export default function Navigation() {
                   >
                     <div className="p-4 space-y-1 max-h-[70vh] overflow-y-auto">
                       {isLoading && (
-                        <div className="text-center py-4 text-muted-foreground text-sm">Loading product groups...</div>
+                        <div className="text-center py-4 text-muted-foreground text-sm">Loading products...</div>
                       )}
                       {isError && (
                         <div className="text-center py-4 text-destructive text-sm">Catalog unavailable</div>
@@ -267,7 +267,7 @@ export default function Navigation() {
             <div className="mt-4 max-h-96 overflow-y-auto space-y-1">
               {isLoading && (
                 <div className="text-center py-4 text-muted-foreground">
-                  Loading product groups...
+                  Loading products...
                 </div>
               )}
               {isError && (
@@ -292,7 +292,7 @@ export default function Navigation() {
               ))}
               {!isLoading && !isError && filteredGroups.length === 0 && (
                 <div className="text-center py-4 text-muted-foreground">
-                  No product groups found
+                  No products found
                 </div>
               )}
             </div>

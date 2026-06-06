@@ -27,9 +27,9 @@ export default function ProductGroups() {
       <section className="page-header pt-28 pb-8">
         <div className="container mx-auto px-4 text-center">
           <span className="section-badge">Our Product Range</span>
-          <h1 className="page-header-title">Product Groups</h1>
+          <h1 className="page-header-title">Products</h1>
           <p className="page-header-subtitle">
-            Explore our {groups.length} product groups with {totalProducts}+ industrial chemicals
+            Explore our {groups.length} products with {totalProducts}+ industrial chemicals
           </p>
         </div>
       </section>

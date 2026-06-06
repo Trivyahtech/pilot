@@ -83,7 +83,7 @@ export default function AdminDashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Recent Product Groups</CardTitle>
+            <CardTitle>Recent Products</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             {groups.slice(0, 6).map((group) => (
