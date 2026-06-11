@@ -1,0 +1,11 @@
+{
+  "name": "pilotimpex",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd Frontend_pilotImpex && npm install && npm run build",
+    "start": "node Backend_pilotImpex/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

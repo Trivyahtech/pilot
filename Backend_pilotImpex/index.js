@@ -354,6 +354,15 @@ app.use((error, _req, res, _next) => {
   res.status(status).json({ message: error.message || "Unexpected server error." });
 });
 
+// Serve React frontend in production
+const FRONTEND_DIST = path.join(__dirname, "..", "Frontend_pilotImpex", "dist");
+if (require("fs").existsSync(FRONTEND_DIST)) {
+  app.use(express.static(FRONTEND_DIST));
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(FRONTEND_DIST, "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
