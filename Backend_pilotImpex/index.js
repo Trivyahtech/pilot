@@ -4,7 +4,6 @@ const crypto = require("crypto");
 const express = require("express");
 const multer = require("multer");
 const cors = require("cors");
-const { fetChData } = require("./fetchData");
 const { formSubmit } = require("./controller/form-submit");
 const {
   UPLOADS_DIR,
@@ -26,24 +25,9 @@ const PORT = Number(process.env.PORT || 3000);
 const SESSION_COOKIE = "pilot_admin_session";
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
 const sessions = new Map();
-const defaultCorsOrigins = [
-  "http://localhost:8080",
-  "http://127.0.0.1:8080",
-  "http://localhost:8081",
-  "http://127.0.0.1:8081",
-];
-
-const allowedOrigins = (process.env.CORS_ORIGIN || defaultCorsOrigins.join(","))
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
-
 app.use(
   cors({
-    origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.ngrok-free.dev') || origin.endsWith('.vercel.app')) return callback(null, true);
-      return callback(new Error("Origin is not allowed by CORS."));
-    },
+    origin: true,
     credentials: true,
   })
 );
@@ -170,12 +154,6 @@ app.get("/catalog", (_req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
-
-app.get("/data", (req, res, next) => {
-  fetChData("1IB__sV0GWlqeglfQ3JpvPVjsu7PB7qD48dIXky_l0F4", "pilot_impex_product_details")
-    .then((data) => res.json(data))
-    .catch(next);
 });
 
 app.post("/form", formSubmit);
