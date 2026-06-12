@@ -35,8 +35,7 @@ app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(UPLOADS_DIR, { maxAge: "7d", immutable: true }));
 
-app.get("/", (_req, res) => res.json({ ok: true, service: "pilot-api", uptime: process.uptime() }));
-app.get("/health", (_req, res) => res.json({ ok: true, uptime: process.uptime() }));
+app.get("/health", (_req, res) => res.json({ ok: true, service: "pilot-api", uptime: process.uptime() }));
 
 const imageMimeTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 const documentMimeTypes = new Set(["application/pdf"]);
@@ -327,19 +326,22 @@ app.post("/admin/products/:slug/image", requireAdmin, uploadImage.single("image"
   }
 });
 
-app.use((error, _req, res, _next) => {
-  const status = error.status || (error instanceof multer.MulterError ? 400 : 500);
-  res.status(status).json({ message: error.message || "Unexpected server error." });
-});
-
-// Serve React frontend in production
-const FRONTEND_DIST = path.join(__dirname, "..", "Frontend_pilotImpex", "dist");
-if (require("fs").existsSync(FRONTEND_DIST)) {
+// Serve React frontend in production (before error handler so SPA catch-all works)
+const fs = require("fs");
+const FRONTEND_DIST = fs.existsSync(path.join(__dirname, "Frontend_pilotImpex", "dist"))
+  ? path.join(__dirname, "Frontend_pilotImpex", "dist")
+  : path.join(__dirname, "..", "Frontend_pilotImpex", "dist");
+if (fs.existsSync(FRONTEND_DIST)) {
   app.use(express.static(FRONTEND_DIST));
   app.use((_req, res) => {
     res.sendFile(path.join(FRONTEND_DIST, "index.html"));
   });
 }
+
+app.use((error, _req, res, _next) => {
+  const status = error.status || (error instanceof multer.MulterError ? 400 : 500);
+  res.status(status).json({ message: error.message || "Unexpected server error." });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
