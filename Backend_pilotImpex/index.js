@@ -336,7 +336,7 @@ app.use((error, _req, res, _next) => {
 const FRONTEND_DIST = path.join(__dirname, "..", "Frontend_pilotImpex", "dist");
 if (require("fs").existsSync(FRONTEND_DIST)) {
   app.use(express.static(FRONTEND_DIST));
-  app.get("*", (_req, res) => {
+  app.use((_req, res) => {
     res.sendFile(path.join(FRONTEND_DIST, "index.html"));
   });
 }
