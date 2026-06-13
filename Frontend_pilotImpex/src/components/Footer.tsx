@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
-                <a href="mailto:info@pilotimpex.com" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">info@pilotimpex.com</a>
+                <a href="mailto:sales@pilotimpex.in" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">sales@pilotimpex.in</a>
               </div>
             </div>
           </div>

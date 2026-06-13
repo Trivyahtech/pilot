@@ -18,7 +18,7 @@ const formSubmit = async (request, response) => {
 
         const mailToOwner = {
             from: email, // Website user's email (form input)
-            to: "business.pilotimpex.data@gmail.com", // Company owner name who will receive Mail
+            to: "sales@pilotimpex.in",
             subject: `New Contact Message from ${firstName}`,
             text: `
         You received a new message:
