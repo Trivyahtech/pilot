@@ -17,17 +17,21 @@
     <meta name="geo.position" content="22.3072;73.1812" />
     <meta name="ICBM" content="22.3072, 73.1812" />
 
-    <!-- Google Fonts -->
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="fetch" href="/catalog" crossorigin>
+
+    <!-- Google Fonts - optional display prevents CLS and render blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=optional" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=optional"></noscript>
 
     <!-- Open Graph -->
     <meta property="og:title" content="PILOT IMPEX - Chemical Suppliers in India | Since 1992" />
     <meta property="og:description" content="PILOT IMPEX — India's trusted chemical supplier since 1992. Authorized dealer of GACL, GNFC, Epigral &amp; Grasim chemicals with nationwide delivery." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.pilotimpex.com/" />
-    <meta property="og:image" content="https://www.pilotimpex.com/favicon.png" />
+    <meta property="og:url" content="https://pilotimpex.in/" />
+    <meta property="og:image" content="https://pilotimpex.in/favicon.png" />
     <meta property="og:site_name" content="PILOT IMPEX" />
     <meta property="og:locale" content="en_IN" />
 
@@ -35,7 +39,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PILOT IMPEX - Chemical Suppliers in India | Since 1992" />
     <meta name="twitter:description" content="Trusted chemical supplier since 1992. Authorized dealer of GACL, GNFC, Epigral &amp; Grasim chemicals with nationwide delivery." />
-    <meta name="twitter:image" content="https://www.pilotimpex.com/favicon.png" />
+    <meta name="twitter:image" content="https://pilotimpex.in/favicon.png" />
 
     <!-- LocalBusiness Structured Data -->
     <script type="application/ld+json">
@@ -44,8 +48,8 @@
       "@type": "LocalBusiness",
       "name": "PILOT IMPEX",
       "description": "Trusted chemical supplier since 1992. Authorized dealer of GACL, GNFC, Epigral, Grasim chemicals. Supplying caustic soda, acids, and specialty chemicals across India.",
-      "url": "https://www.pilotimpex.com",
-      "logo": "https://www.pilotimpex.com/favicon.png",
+      "url": "https://pilotimpex.in",
+      "logo": "https://pilotimpex.in/favicon.png",
       "telephone": "+918045804678",
       "email": "info@pilotimpex.com",
       "taxID": "24ARBPT2700N1ZS",
@@ -95,12 +99,12 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "PILOT IMPEX",
-      "url": "https://www.pilotimpex.com",
+      "url": "https://pilotimpex.in",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://www.pilotimpex.com/products?search={search_term_string}"
+          "urlTemplate": "https://pilotimpex.in/products?search={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }

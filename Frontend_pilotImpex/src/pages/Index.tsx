@@ -8,10 +8,10 @@ import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import benzylChlorideImg from "@/assets/Pilot Impex Product Image/Benzyl Chloride.png";
-import hydrogenPeroxideImg from "@/assets/Pilot Impex Product Image/Hydrogen Peroxide.png";
-import hydrazineHydrateImg from "@/assets/Pilot Impex Product Image/Hydrazine Hydrate.png";
-import phosphoricAcidImg from "@/assets/Pilot Impex Product Image/Phosphoric Acid.png";
+import benzylChlorideImg from "@/assets/Pilot Impex Product Image/Benzyl Chloride.webp";
+import hydrogenPeroxideImg from "@/assets/Pilot Impex Product Image/Hydrogen Peroxide.webp";
+import hydrazineHydrateImg from "@/assets/Pilot Impex Product Image/Hydrazine Hydrate.webp";
+import phosphoricAcidImg from "@/assets/Pilot Impex Product Image/Phosphoric Acid.webp";
 
 const features = [
   {
@@ -112,9 +112,9 @@ const Index = () => {
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors duration-300">
                     <feature.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="font-heading font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                  <h2 className="font-heading font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                     {feature.title}
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground text-base leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
                     {feature.description}
                   </p>

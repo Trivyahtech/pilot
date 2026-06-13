@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Linkedin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import footer_icon from "../assets/footer-icon.png"
+import footer_icon from "../assets/footer-icon.webp"
 
 export default function Footer() {
   return (
@@ -85,7 +85,7 @@ export default function Footer() {
                 </p>
               </div>
               
-              <Button variant="outline" className="w-full border-accent/50 text-accent hover:bg-accent hover:text-white hover:border-accent transition-all mt-3" asChild>
+              <Button variant="outline" className="w-full bg-transparent border-white/50 text-white hover:bg-white/20 hover:border-white hover:text-white transition-all mt-3" asChild>
                 <Link to="/contact">Send Inquiry</Link>
               </Button>
               

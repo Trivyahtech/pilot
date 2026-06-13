@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Circle } from 'lucide-react';
 // Import local images
-import industrialStorage from "@/assets/image silder/Industrial Chemical Storage.png";
-import chemicalSafety from "@/assets/image silder/Chemical Safety First.png";
-import productRange from "@/assets/image silder/Chemical Product Range.png";
-import vadodaraHub from "@/assets/image silder/Vadodara Industrial Hub.png";
+import industrialStorage from "@/assets/image silder/Industrial Chemical Storage.webp";
+import chemicalSafety from "@/assets/image silder/Chemical Safety First.webp";
+import productRange from "@/assets/image silder/Chemical Product Range.webp";
+import vadodaraHub from "@/assets/image silder/Vadodara Industrial Hub.webp";
 
 // Professional chemical industry images
 const heroImages = [
@@ -44,6 +44,7 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const navigate = useNavigate();
+  const hasAnimated = useRef(false);
 
   // Auto-advance slides
   useEffect(() => {
@@ -131,9 +132,10 @@ export default function Hero() {
               src={heroImages[currentIndex].src}
               alt={heroImages[currentIndex].title}
               className="h-full w-full object-cover brightness-100"
-              style={{
-                filter: 'brightness(0.9) saturate(1.1) contrast(1.05)'
-              }}
+              style={{ filter: 'brightness(0.9) saturate(1.1) contrast(1.05)' }}
+              fetchPriority={currentIndex === 0 ? "high" : "auto"}
+              loading={currentIndex === 0 ? "eager" : "lazy"}
+              decoding={currentIndex === 0 ? "sync" : "async"}
             />
           </motion.div>
         </AnimatePresence>
@@ -158,10 +160,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex h-screen items-center justify-center px-4 text-center">
         <div className="container mx-auto max-w-6xl px-4">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" onExitComplete={() => { hasAnimated.current = true; }}>
             <motion.div
               key={`slide-${currentIndex}`}
-              initial="hidden"
+              initial={hasAnimated.current ? "hidden" : "visible"}
               animate="visible"
               variants={textVariants}
               className="space-y-6 text-white"
@@ -203,7 +205,7 @@ export default function Hero() {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`h-2 w-2 rounded-full transition-all ${currentIndex === index ? 'w-6 bg-white' : 'w-2 bg-white/50'}`}
+                    className={`relative h-8 w-8 flex items-center justify-center rounded-full transition-all focus:outline-none before:absolute before:rounded-full before:transition-all ${currentIndex === index ? 'before:h-6 before:w-6 before:bg-white' : 'before:h-2 before:w-2 before:bg-white/50'}`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

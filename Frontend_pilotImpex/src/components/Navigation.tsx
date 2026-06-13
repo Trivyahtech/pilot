@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Search as SearchIcon, Menu, X, ChevronRight, Flame, Droplets, FlaskConical, Atom, TestTube2, Beaker, Box, Package, Layers, Hexagon, Activity, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import header_icon from "../assets/header-icon.png";
+import header_icon from "../assets/header-icon.webp";
 import { useCatalog } from "@/hooks/useCatalog";
 
 const groupIcons: Record<string, React.ReactNode> = {
@@ -234,12 +234,14 @@ export default function Navigation() {
             <button
               className="p-2 text-foreground/70 hover:text-primary transition-colors"
               onClick={() => setShowProductDropdown(!showProductDropdown)}
+              aria-label="Search products"
             >
               <SearchIcon className="w-5 h-5" />
             </button>
             <button
               className="p-2 text-foreground/70 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
