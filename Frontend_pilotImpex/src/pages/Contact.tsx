@@ -152,7 +152,7 @@ export default function Contact() {
     <div className="min-h-screen">
       <SEO
         title="Contact Us"
-        description="Contact PILOT IMPEX for chemical inquiries. B-4, Bela Chamber, Vadodara 390001, Gujarat. Phone: 08045804678. Email: sales@pilotimpex.in. Send us your requirement today."
+        description="Contact PILOT IMPEX for chemical inquiries. B-4, Bela Chamber, Vadodara 390001, Gujarat. Phone: +91 93134 85973. Email: sales@pilotimpex.in. Send us your requirement today."
         canonical="/contact"
         keywords="contact Pilot Impex, chemical inquiry Vadodara, chemical supplier contact Gujarat, order chemicals India, bulk chemical purchase inquiry"
       />
@@ -412,8 +412,8 @@ export default function Contact() {
                     <Phone className="w-5 h-5 text-primary" />
                     <div>
                       <p className="text-foreground font-medium">Phone</p>
-                      <a href="tel:918460740387" className="text-primary hover:underline">
-                        +91 8460740387
+                      <a href="tel:919313485973" className="text-primary hover:underline">
+                        +91 93134 85973
                       </a>
                     </div>
                   </div>
@@ -446,8 +446,8 @@ export default function Contact() {
                     {/* <p className="text-muted-foreground">Marketing Manager</p> */}
                     <div className="flex items-center space-x-2 mt-3">
                       <Phone className="w-4 h-4 text-primary" />
-                      <a href="tel:918460740387" className="text-primary hover:underline">
-                        +91 8460740387
+                      <a href="tel:919313485973" className="text-primary hover:underline">
+                        +91 93134 85973
                       </a>
                     </div>
                   </div>

@@ -62,11 +62,15 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
-                <a href="tel:918460740387" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">+91 8460740387</a>
+                <a href="tel:919313485973" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">+91 93134 85973</a>
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
                 <a href="mailto:sales@pilotimpex.in" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">sales@pilotimpex.in</a>
+              </div>
+              <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-colors group">
+                <MessageCircle className="w-5 h-5 text-accent flex-shrink-0 group-hover:text-primary-foreground transition-colors" />
+                <a href="https://wa.me/919313485973" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-medium">+91 93134 85973</a>
               </div>
             </div>
           </div>
@@ -79,8 +83,8 @@ export default function Footer() {
                 <p className="text-primary-foreground/80 text-sm">
                   <span className="block text-primary-foreground font-semibold">Tejas Turakhia</span>
                   {/* <span className="text-accent-300 font-medium">Marketing Manager</span><br /> */}
-                  <a href="tel:918460740387" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors inline-flex items-center mt-1">
-                    <Phone className="w-4 h-4 inline-block mr-1.5 text-accent" /> +91 8460740387
+                  <a href="tel:919313485973" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors inline-flex items-center mt-1">
+                    <Phone className="w-4 h-4 inline-block mr-1.5 text-accent" /> +91 93134 85973
                   </a>
                 </p>
               </div>
