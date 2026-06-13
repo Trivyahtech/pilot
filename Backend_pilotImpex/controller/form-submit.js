@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
+    host: process.env.SMTP_HOST || "smtpout.secureserver.net",
+    port: parseInt(process.env.SMTP_PORT || "465"),
     secure: true,
     auth: {
         user: process.env.SMTP_USER,
@@ -17,7 +17,8 @@ const formSubmit = async (request, response) => {
         const { firstName, lastName, companyName, email, mobileNumber, requirement,inquiryType } = request.body;
 
         const mailToOwner = {
-            from: email, // Website user's email (form input)
+            from: `"PILOT IMPEX Website" <${process.env.SMTP_USER}>`,
+            replyTo: email,
             to: "sales@pilotimpex.in",
             subject: `New Contact Message from ${firstName}`,
             text: `
@@ -35,8 +36,8 @@ const formSubmit = async (request, response) => {
         await transporter.sendMail(mailToOwner);
 
         const mailToUser = {
-            from: "business.pilotimpex.data@gmail.com", // Website user's email (form input)
-            to: email, // Website owner's Gmail
+            from: `"PILOT IMPEX" <${process.env.SMTP_USER}>`,
+            to: email,
             subject: `${inquiryType} Inquiry`,
             text: `
         Thank You For ${inquiryType} Inquiry Our Team will contact you soon.
