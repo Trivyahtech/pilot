@@ -1,0 +1,15 @@
+# Build artifacts
+*.zip
+backend_paas/
+
+# Claude Code internal files
+.claude-flow/
+**/.claude-flow/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Node
+node_modules/
